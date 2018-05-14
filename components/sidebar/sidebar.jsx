@@ -18,7 +18,6 @@ import * as ChannelUtils from 'utils/channel_utils.jsx';
 import {ActionTypes, Constants} from 'utils/constants.jsx';
 import * as Utils from 'utils/utils.jsx';
 import favicon from 'images/favicon/favicon.ico';
-import redFavicon from 'images/favicon/favicon.ico';
 import MoreChannels from 'components/more_channels';
 import MoreDirectChannels from 'components/more_direct_channels';
 import TeamPermissionGate from 'components/permissions_gates/team_permission_gate';
@@ -182,11 +181,11 @@ export default class Sidebar extends React.PureComponent {
             link.type = 'image/x-icon';
             link.rel = 'shortcut icon';
             link.id = 'favicon';
-            if (this.badgesActive) {
-                link.href = redFavicon;
-            } else {
-                link.href = favicon;
-            }
+            // if (this.badgesActive) {
+            //     link.href = redFavicon;
+            // } else {
+            link.href = favicon;
+            // }
             var head = document.getElementsByTagName('head')[0];
             var oldLink = document.getElementById('favicon');
             if (oldLink) {
