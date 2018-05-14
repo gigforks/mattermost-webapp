@@ -17,7 +17,7 @@ import AppDispatcher from 'dispatcher/app_dispatcher.jsx';
 import * as ChannelUtils from 'utils/channel_utils.jsx';
 import {ActionTypes, Constants} from 'utils/constants.jsx';
 import * as Utils from 'utils/utils.jsx';
-import favicon from 'images/favicon/favicon.ico';
+import favicon from 'images/favicon/favicon-16x16.png';
 import MoreChannels from 'components/more_channels';
 import MoreDirectChannels from 'components/more_direct_channels';
 import TeamPermissionGate from 'components/permissions_gates/team_permission_gate';
