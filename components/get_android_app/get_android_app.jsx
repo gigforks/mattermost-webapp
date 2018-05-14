@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import {useSafeUrl} from 'utils/url';
-import MattermostIcon from 'images/favicon/android-chrome-192x192.png';
+import TFIcon from 'images/favicon/favicon-96x96.png';
 import Nexus6Mockup from 'images/nexus-6p-mockup.png';
 
 export default function GetAndroidApp({androidAppDownloadLink}) {
@@ -23,7 +23,7 @@ export default function GetAndroidApp({androidAppDownloadLink}) {
             <div>
                 <img
                     className='get-android-app__icon'
-                    src={MattermostIcon}
+                    src={TFIcon}
                 />
                 <div className='get-android-app__app-info'>
                     <span className='get-android-app__app-name'>
