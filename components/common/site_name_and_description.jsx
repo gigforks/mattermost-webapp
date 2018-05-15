@@ -14,7 +14,7 @@ export default class SiteNameAndDescription extends React.PureComponent {
 
     static defaultProps = {
         isLicensed: false,
-        siteName: 'Mattermost',
+        siteName: 'ZeroChat',
     };
 
     render() {
