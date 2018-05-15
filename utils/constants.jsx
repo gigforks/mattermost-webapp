@@ -635,7 +635,7 @@ export const Constants = {
     THEMES: {
         default: {
             type: 'ThreeFold',
-            sidebarBg: '#dcdcda',
+            sidebarBg: '#f9f9f9',
             sidebarText: '#757575',
             sidebarUnreadText: '#757575',
             sidebarTextHoverBg: '#adadad',
