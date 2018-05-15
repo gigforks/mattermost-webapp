@@ -1,9 +1,9 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
-// See License.txt for license information.
+// See LICENSE.txt for license information.
 
 import $ from 'jquery';
 import {batchActions} from 'redux-batched-actions';
-import {ChannelTypes, EmojiTypes, PostTypes, TeamTypes, UserTypes, RoleTypes} from 'mattermost-redux/action_types';
+import {ChannelTypes, EmojiTypes, PostTypes, TeamTypes, UserTypes, RoleTypes, GeneralTypes} from 'mattermost-redux/action_types';
 import {WebsocketEvents, General} from 'mattermost-redux/constants';
 import {getChannelAndMyMember, getChannelStats, viewChannel} from 'mattermost-redux/actions/channels';
 import {setServerVersion} from 'mattermost-redux/actions/general';
@@ -279,6 +279,14 @@ function handleEvent(msg) {
         handleUserRoleUpdated(msg);
         break;
 
+    case SocketEvents.CONFIG_CHANGED:
+        handleConfigChanged(msg);
+        break;
+
+    case SocketEvents.LICENSE_CHANGED:
+        handleLicenseChanged(msg);
+        break;
+
     default:
     }
 }
@@ -454,6 +462,11 @@ function handleDirectAddedEvent(msg) {
 function handleUserAddedEvent(msg) {
     if (ChannelStore.getCurrentId() === msg.broadcast.channel_id) {
         getChannelStats(ChannelStore.getCurrentId())(dispatch, getState);
+        dispatch({
+            type: UserTypes.RECEIVED_PROFILE_IN_CHANNEL,
+            data: {user_id: msg.data.user_id},
+            id: msg.broadcast.channel_id,
+        });
     }
 
     if (TeamStore.getCurrentId() === msg.data.team_id && UserStore.getCurrentId() === msg.data.user_id) {
@@ -683,4 +696,12 @@ function handleUserRoleUpdated(msg) {
             GlobalActions.redirectUserToDefaultTeam();
         }
     }
+}
+
+function handleConfigChanged(msg) {
+    store.dispatch({type: GeneralTypes.CLIENT_CONFIG_RECEIVED, data: msg.data.config});
+}
+
+function handleLicenseChanged(msg) {
+    store.dispatch({type: GeneralTypes.CLIENT_LICENSE_RECEIVED, data: msg.data.license});
 }

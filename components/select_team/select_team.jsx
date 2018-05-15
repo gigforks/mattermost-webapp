@@ -1,19 +1,19 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
-// See License.txt for license information.
+// See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import {Link} from 'react-router-dom';
 
-import {Permissions} from 'mattermost-redux/constants';
+import {General, Permissions} from 'mattermost-redux/constants';
 
 import {emitUserLoggedOutEvent} from 'actions/global_actions.jsx';
 import {addUserToTeamFromInvite} from 'actions/team_actions.jsx';
-import TeamStore from 'stores/team_store.jsx';
+
+import {mappingValueFromRoles} from 'utils/policy_roles_adapter';
 import * as UserAgent from 'utils/user_agent.jsx';
 import * as Utils from 'utils/utils.jsx';
-import UserStore from 'stores/user_store.jsx';
 
 import logoImage from 'images/logo.png';
 
@@ -25,57 +25,74 @@ import SiteNameAndDescription from 'components/common/site_name_and_description'
 
 import SelectTeamItem from './components/select_team_item.jsx';
 
+const TEAMS_PER_PAGE = 200;
+
 export default class SelectTeam extends React.Component {
     static propTypes = {
         isLicensed: PropTypes.bool.isRequired,
+        currentUserRoles: PropTypes.string,
         customDescriptionText: PropTypes.string,
-        enableTeamCreation: PropTypes.bool.isRequired,
+        isMemberOfTeam: PropTypes.bool.isRequired,
+        joinableTeams: PropTypes.array,
+        roles: PropTypes.object.isRequired,
         siteName: PropTypes.string,
         actions: PropTypes.shape({
-            loadRolesIfNeeded: PropTypes.func.isRequired,
             getTeams: PropTypes.func.isRequired,
+            loadRolesIfNeeded: PropTypes.func.isRequired,
         }).isRequired,
     }
 
     constructor(props) {
         super(props);
 
-        const state = this.getStateFromStores(false);
-        state.loadingTeamId = '';
-        state.error = null;
-        this.state = state;
-    }
-
-    componentWillMount() {
-        this.props.actions.loadRolesIfNeeded(['system_user', 'system_admin']);
+        this.state = {
+            loadingTeamId: '',
+            error: null,
+        };
     }
 
     componentDidMount() {
-        TeamStore.addChangeListener(this.onTeamChange);
-        this.props.actions.getTeams(0, 200);
+        this.props.actions.getTeams(0, TEAMS_PER_PAGE);
     }
 
-    componentWillUnmount() {
-        TeamStore.removeChangeListener(this.onTeamChange);
+    componentWillMount() {
+        const {
+            actions,
+            roles,
+        } = this.props;
+
+        actions.loadRolesIfNeeded([General.SYSTEM_ADMIN_ROLE, General.SYSTEM_USER_ROLE]);
+
+        if (
+            roles.system_admin &&
+            roles.system_user
+        ) {
+            this.loadPoliciesIntoState(roles);
+        }
     }
 
-    onTeamChange = () => {
-        this.setState(this.getStateFromStores(true));
-    };
+    componentWillReceiveProps(nextProps) {
+        if (
+            !this.state.loaded &&
+            nextProps.roles.system_admin &&
+            nextProps.roles.system_user
+        ) {
+            this.loadPoliciesIntoState(nextProps.roles);
+        }
+    }
 
-    getStateFromStores(loaded) {
-        return {
-            teams: TeamStore.getAll(),
-            teamMembers: TeamStore.getMyTeamMembers(),
-            teamListings: TeamStore.getTeamListings(),
-            loaded,
-        };
+    loadPoliciesIntoState = (roles) => {
+        // Purposely parsing boolean from string 'true' or 'false'
+        // because the string comes from the policy roles adapter mapping.
+        const enableTeamCreation = (mappingValueFromRoles('enableTeamCreation', roles) === 'true');
+
+        this.setState({enableTeamCreation, loaded: true});
     }
 
     handleTeamClick = (team) => {
         this.setState({loadingTeamId: team.id});
 
-        addUserToTeamFromInvite('', '', team.invite_id,
+        addUserToTeamFromInvite('', team.invite_id,
             () => {
                 this.props.history.push(`/${team.name}/channels/town-square`);
             },
@@ -101,23 +118,21 @@ export default class SelectTeam extends React.Component {
         });
     };
 
-    teamContentsCompare(teamItemA, teamItemB) {
-        return teamItemA.props.team.display_name.localeCompare(teamItemB.props.team.display_name);
-    }
-
     render() {
         const {
+            currentUserRoles,
             customDescriptionText,
-            enableTeamCreation,
             isLicensed,
+            isMemberOfTeam,
+            joinableTeams,
             siteName,
         } = this.props;
+        const {enableTeamCreation} = this.state;
 
-        const isSystemAdmin = Utils.isSystemAdmin(UserStore.getCurrentUser().roles);
+        const isSystemAdmin = Utils.isSystemAdmin(currentUserRoles);
 
         let openContent;
-
-        if (!this.state.loaded || this.state.loadingTeamId) {
+        if (this.state.loadingTeamId) {
             openContent = <LoadingScreen/>;
         } else if (this.state.error) {
             openContent = (
@@ -129,28 +144,16 @@ export default class SelectTeam extends React.Component {
             );
         } else {
             let openTeamContents = [];
-            const isAlreadyMember = new Map();
-
-            for (const teamMember of this.state.teamMembers) {
-                const teamId = teamMember.team_id;
-                isAlreadyMember[teamId] = true;
-            }
-
-            for (const id in this.state.teamListings) {
-                if (this.state.teamListings.hasOwnProperty(id) && !isAlreadyMember[id]) {
-                    const openTeam = this.state.teamListings[id];
-                    if (openTeam && openTeam.delete_at === 0) {
-                        openTeamContents.push(
-                            <SelectTeamItem
-                                key={'team_' + openTeam.name}
-                                team={openTeam}
-                                onTeamClick={this.handleTeamClick}
-                                loading={this.state.loadingTeamId === openTeam.id}
-                            />
-                        );
-                    }
-                }
-            }
+            joinableTeams.forEach((joinableTeam) => {
+                openTeamContents.push(
+                    <SelectTeamItem
+                        key={'team_' + joinableTeam.name}
+                        team={joinableTeam}
+                        onTeamClick={this.handleTeamClick}
+                        loading={this.state.loadingTeamId === joinableTeam.id}
+                    />
+                );
+            });
 
             if (openTeamContents.length === 0 && (enableTeamCreation || isSystemAdmin)) {
                 openTeamContents = (
@@ -187,10 +190,6 @@ export default class SelectTeam extends React.Component {
                 );
             }
 
-            if (Array.isArray(openTeamContents)) {
-                openTeamContents = openTeamContents.sort(this.teamContentsCompare);
-            }
-
             openContent = (
                 <div className='signup__content'>
                     <h4>
@@ -202,6 +201,18 @@ export default class SelectTeam extends React.Component {
                     <div className='signup-team-all'>
                         {openTeamContents}
                     </div>
+                </div>
+            );
+        }
+
+        let teamHelp = null;
+        if (isSystemAdmin && !enableTeamCreation) {
+            teamHelp = (
+                <div>
+                    <FormattedMessage
+                        id='login.createTeamAdminOnly'
+                        defaultMessage='This option is only available for System Administrators, and does not show up for other users.'
+                    />
                 </div>
             );
         }
@@ -219,6 +230,7 @@ export default class SelectTeam extends React.Component {
                         />
                     </Link>
                 </div>
+                {teamHelp}
             </SystemPermissionGate>
         );
 
@@ -244,7 +256,7 @@ export default class SelectTeam extends React.Component {
         let headerButton;
         if (this.state.error) {
             headerButton = <BackButton onClick={this.clearError}/>;
-        } else if (this.state.teamMembers.length) {
+        } else if (isMemberOfTeam) {
             headerButton = <BackButton/>;
         } else {
             headerButton = (

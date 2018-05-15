@@ -1,5 +1,5 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
-// See License.txt for license information.
+// See LICENSE.txt for license information.
 
 import $ from 'jquery';
 import PropTypes from 'prop-types';
@@ -22,6 +22,8 @@ import WebrtcStore from 'stores/webrtc_store.jsx';
 import * as ChannelUtils from 'utils/channel_utils.jsx';
 import {ActionTypes, Constants, ModalIdentifiers, RHSStates, UserStatuses} from 'utils/constants.jsx';
 import * as Utils from 'utils/utils.jsx';
+
+import ConvertChannelModal from 'components/convert_channel_modal';
 import ChannelInfoModal from 'components/channel_info_modal';
 import ChannelInviteModal from 'components/channel_invite_modal';
 import ChannelMembersModal from 'components/channel_members_modal';
@@ -37,6 +39,7 @@ import SearchIcon from 'components/svg/search_icon';
 import ToggleModalButton from 'components/toggle_modal_button.jsx';
 import ToggleModalButtonRedux from 'components/toggle_modal_button_redux';
 import ChannelPermissionGate from 'components/permissions_gates/channel_permission_gate';
+import TeamPermissionGate from 'components/permissions_gates/team_permission_gate';
 
 import Pluggable from 'plugins/pluggable';
 
@@ -362,6 +365,7 @@ export default class Navbar extends React.Component {
             let setChannelPurposeOption;
             let notificationPreferenceOption;
             let renameChannelOption;
+            let convertChannelOption;
             let deleteChannelOption;
             let leaveChannelOption;
 
@@ -598,6 +602,31 @@ export default class Navbar extends React.Component {
                         </ChannelPermissionGate>
                     );
 
+                    if (!ChannelStore.isDefault(channel) && channel.type === Constants.OPEN_CHANNEL) {
+                        convertChannelOption = (
+                            <TeamPermissionGate
+                                teamId={teamId}
+                                permissions={[Permissions.MANAGE_TEAM]}
+                            >
+                                <li role='presentation'>
+                                    <ToggleModalButton
+                                        role='menuitem'
+                                        dialogType={ConvertChannelModal}
+                                        dialogProps={{
+                                            channelId: channel.id,
+                                            channelDisplayName: channel.display_name,
+                                        }}
+                                    >
+                                        <FormattedMessage
+                                            id='channel_header.convert'
+                                            defaultMessage='Convert to Private Channel'
+                                        />
+                                    </ToggleModalButton>
+                                </li>
+                            </TeamPermissionGate>
+                        );
+                    }
+
                     renameChannelOption = (
                         <ChannelPermissionGate
                             channelId={channel.id}
@@ -618,7 +647,9 @@ export default class Navbar extends React.Component {
                             </li>
                         </ChannelPermissionGate>
                     );
+                }
 
+                if (!ChannelStore.isDefault(channel)) {
                     deleteChannelOption = (
                         <ChannelPermissionGate
                             channelId={channel.id}
@@ -639,9 +670,7 @@ export default class Navbar extends React.Component {
                             </li>
                         </ChannelPermissionGate>
                     );
-                }
 
-                if (!ChannelStore.isDefault(channel)) {
                     leaveChannelOption = (
                         <li role='presentation'>
                             <a
@@ -709,6 +738,7 @@ export default class Navbar extends React.Component {
                             {setChannelHeaderOption}
                             {setChannelPurposeOption}
                             {renameChannelOption}
+                            {convertChannelOption}
                             {deleteChannelOption}
                             {leaveChannelOption}
                             {toggleFavoriteOption}

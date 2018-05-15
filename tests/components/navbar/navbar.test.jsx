@@ -1,5 +1,5 @@
-// Copyright (c) 2017-present Mattermost, Inc. All Rights Reserved.
-// See License.txt for license information.
+// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// See LICENSE.txt for license information.
 
 import React from 'react';
 import {shallow} from 'enzyme';
@@ -43,6 +43,16 @@ describe('components/navbar/Navbar', () => {
         );
 
         wrapper.setState(validState);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    test('should match snapshot, for default channel', () => {
+        const wrapper = shallow(
+            <Navbar {...baseProps}/>
+        );
+
+        const channel = {type: 'O', id: '123', name: 'town-square', display_name: 'Town Square', team_id: 'team_id'};
+        wrapper.setState({...validState, channel});
         expect(wrapper).toMatchSnapshot();
     });
 

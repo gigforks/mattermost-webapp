@@ -1,5 +1,5 @@
-// Copyright (c) 2016-present Mattermost, Inc. All Rights Reserved.
-// See License.txt for license information.
+// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -257,7 +257,6 @@ export default class SignupEmail extends React.Component {
             };
 
             createUserWithInvite(user,
-                this.state.data,
                 this.state.token,
                 this.state.inviteId,
                 this.handleSignupSuccess.bind(this, user),

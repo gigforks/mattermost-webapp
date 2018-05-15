@@ -1,5 +1,5 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
-// See License.txt for license information.
+// See LICENSE.txt for license information.
 
 import $ from 'jquery';
 import {FormattedMessage} from 'react-intl';
@@ -319,7 +319,7 @@ export default class RhsThread extends React.Component {
 
         let createAt = selected.create_at;
         if (!createAt) {
-            createAt = this.props.posts[0].create_at;
+            createAt = this.props.posts[this.props.posts.length - 1].create_at;
         }
         const rootPostDay = Utils.getDateForUnixTicks(createAt);
         let previousPostDay = rootPostDay;
