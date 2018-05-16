@@ -57,17 +57,17 @@ export default class ImportThemeModal extends React.Component {
         const colors = text.split(',');
         const theme = {type: 'custom'};
 
-        theme.sidebarBg = colors[0];
-        theme.sidebarText = colors[5];
-        theme.sidebarUnreadText = colors[5];
-        theme.sidebarTextHoverBg = colors[4];
-        theme.sidebarTextActiveBorder = colors[2];
-        theme.sidebarTextActiveColor = colors[3];
-        theme.sidebarHeaderBg = colors[1];
-        theme.sidebarHeaderTextColor = colors[5];
-        theme.onlineIndicator = colors[6];
+        theme.sidebarBg = '#f00';
+        theme.sidebarText = '#f00';
+        theme.sidebarUnreadText = '#f00';
+        theme.sidebarTextHoverBg = '#f00';
+        theme.sidebarTextActiveBorder = '#f00';
+        theme.sidebarTextActiveColor = '#f00';
+        theme.sidebarHeaderBg = '#f00';
+        theme.sidebarHeaderTextColor = '#f00';
+        theme.onlineIndicator = '#f00';
         theme.awayIndicator = '#E0B333';
-        theme.mentionBg = colors[7];
+        theme.mentionBg = '#f00';
         theme.mentionColor = '#ffffff';
         theme.centerChannelBg = '#ffffff';
         theme.centerChannelColor = '#333333';
