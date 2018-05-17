@@ -456,23 +456,29 @@ export default class ChannelHeader extends React.Component {
             );
         } else if (isGroup) {
             dropdownContents.push(
-                <li
-                    key='edit_header_direct'
-                    role='presentation'
+                <TeamPermissionGate
+                teamId={teamId}
+                permissions={[Permissions.MANAGE_TEAM]}
+                key='edit_channel_header_team'
                 >
-                    <ToggleModalButtonRedux
-                        id='channelEditHeaderGroup'
-                        role='menuitem'
-                        modalId={ModalIdentifiers.EDIT_CHANNEL_HEADER}
-                        dialogType={EditChannelHeaderModal}
-                        dialogProps={{channel}}
+                    <li
+                        key='edit_header_direct'
+                        role='presentation'
                     >
-                        <FormattedMessage
-                            id='channel_header.channelHeader'
-                            defaultMessage='Edit Channel Header'
-                        />
-                    </ToggleModalButtonRedux>
-                </li>
+                        <ToggleModalButtonRedux
+                            id='channelEditHeaderGroup'
+                            role='menuitem'
+                            modalId={ModalIdentifiers.EDIT_CHANNEL_HEADER}
+                            dialogType={EditChannelHeaderModal}
+                            dialogProps={{channel}}
+                        >
+                            <FormattedMessage
+                                id='channel_header.channelHeader'
+                                defaultMessage='Edit Channel Header'
+                            />
+                        </ToggleModalButtonRedux>
+                    </li>
+                </TeamPermissionGate>
             );
 
             dropdownContents.push(
@@ -610,10 +616,9 @@ export default class ChannelHeader extends React.Component {
                     </ChannelPermissionGate>
                 );
                 dropdownContents.push(
-                    <ChannelPermissionGate
-                        channelId={channel.id}
+                    <TeamPermissionGate
                         teamId={teamId}
-                        permissions={[isPrivate ? Permissions.MANAGE_PRIVATE_CHANNEL_MEMBERS : Permissions.MANAGE_PUBLIC_CHANNEL_MEMBERS]}
+                        permissions={[Permissions.MANAGE_TEAM]}
                         key='manage_members_permission'
                     >
                         <li
@@ -632,7 +637,7 @@ export default class ChannelHeader extends React.Component {
                                 />
                             </button>
                         </li>
-                    </ChannelPermissionGate>
+                    </TeamPermissionGate>
                 );
 
                 dropdownContents.push(
@@ -665,10 +670,9 @@ export default class ChannelHeader extends React.Component {
 
             if (!this.props.isReadOnly) {
                 dropdownContents.push(
-                    <ChannelPermissionGate
-                        channelId={channel.id}
+                    <TeamPermissionGate
                         teamId={teamId}
-                        permissions={[isPrivate ? Permissions.MANAGE_PRIVATE_CHANNEL_PROPERTIES : Permissions.MANAGE_PUBLIC_CHANNEL_PROPERTIES]}
+                        permissions={[Permissions.MANAGE_TEAM]}
                         key='set_channel_info_permission'
                     >
                         <li
@@ -727,7 +731,7 @@ export default class ChannelHeader extends React.Component {
                                 />
                             </button>
                         </li>
-                    </ChannelPermissionGate>
+                    </TeamPermissionGate>
                 );
             }
 
@@ -764,11 +768,10 @@ export default class ChannelHeader extends React.Component {
 
             if (!this.props.isDefault) {
                 dropdownContents.push(
-                    <ChannelPermissionGate
-                        channelId={channel.id}
-                        teamId={teamId}
-                        permissions={[isPrivate ? Permissions.DELETE_PRIVATE_CHANNEL : Permissions.DELETE_PUBLIC_CHANNEL]}
-                        key='delete_channel_permission'
+                    <TeamPermissionGate
+                    teamId={teamId}
+                    permissions={[Permissions.MANAGE_TEAM]}
+                    key='delete_channel_permission'
                     >
                         <li
                             key='delete_channel'
@@ -787,7 +790,7 @@ export default class ChannelHeader extends React.Component {
                                 />
                             </ToggleModalButtonRedux>
                         </li>
-                    </ChannelPermissionGate>
+                    </TeamPermissionGate>
                 );
 
                 dropdownContents.push(

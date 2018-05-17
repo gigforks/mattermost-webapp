@@ -559,13 +559,18 @@ export default class Sidebar extends React.PureComponent {
                 placement='top'
                 overlay={createChannelTootlip}
             >
-                <button
-                    id='createPublicChannel'
-                    className='add-channel-btn cursor--pointer style--none'
-                    onClick={this.showNewChannelModal.bind(this, Constants.OPEN_CHANNEL)}
+                <TeamPermissionGate
+                        teamId={this.props.currentTeam.id}
+                        permissions={[Permissions.MANAGE_TEAM]}
                 >
-                    {'+'}
-                </button>
+                    <button
+                        id='createPublicChannel'
+                        className='add-channel-btn cursor--pointer style--none'
+                        onClick={this.showNewChannelModal.bind(this, Constants.OPEN_CHANNEL)}
+                    >
+                        {'+'}
+                    </button>
+                </TeamPermissionGate>
             </OverlayTrigger>
         );
 
@@ -576,13 +581,18 @@ export default class Sidebar extends React.PureComponent {
                 placement='top'
                 overlay={createGroupTootlip}
             >
-                <button
-                    id='createPrivateChannel'
-                    className='add-channel-btn cursor--pointer style--none'
-                    onClick={this.showNewChannelModal.bind(this, Constants.PRIVATE_CHANNEL)}
+                <TeamPermissionGate
+                        teamId={this.props.currentTeam.id}
+                        permissions={[Permissions.MANAGE_TEAM]}
                 >
-                    {'+'}
-                </button>
+                    <button
+                        id='createPrivateChannel'
+                        className='add-channel-btn cursor--pointer style--none'
+                        onClick={this.showNewChannelModal.bind(this, Constants.PRIVATE_CHANNEL)}
+                    >
+                        {'+'}
+                    </button>
+                </TeamPermissionGate>
             </OverlayTrigger>
         );
 
