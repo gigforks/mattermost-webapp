@@ -189,7 +189,7 @@
   "admin.cluster.UseExperimentalGossipDesc": "When true, the server will attempt to communicate via the gossip protocol over the gossip port.  When false the server will attempt to communicate over the streaming port. When false the gossip port and protocol are still used to determine cluster health.",
   "admin.cluster.UseIpAddress": "Use IP Address:",
   "admin.cluster.UseIpAddressDesc": "When true, the cluster will attempt to communicate via IP Address vs using the hostname.",
-  "admin.cluster.enableDescription": "When true, "When true, the OAuth 2.0 application is considered trusted by the ZeroChat server and doesn't require the user to accept authorization. When false, an additional window will appear, asking the user to accept or deny the authorization." will run in High Availability mode. Please see <a href=\"/\" target='_blank'>documentation</a> to learn more about configuring High Availability for ZeroChat.",
+  "admin.cluster.enableDescription": "When true, the OAuth 2.0 application is considered trusted by the ZeroChat server and doesn't require the user to accept authorization. When false, an additional window will appear, asking the user to accept or deny the authorization. will run in High Availability mode. Please see <a href=\"/\" target='_blank'>documentation</a> to learn more about configuring High Availability for ZeroChat.",
   "admin.cluster.enableTitle": "Enable High Availability Mode:",
   "admin.cluster.interNodeListenAddressDesc": "The address the server will listen on for communicating with other servers.",
   "admin.cluster.interNodeListenAddressEx": "E.g.: \":8075\"",
