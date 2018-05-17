@@ -11,7 +11,7 @@ describe('/components/common/SiteNameAndDescription', () => {
     const baseProps = {
         customDescriptionText: '',
         isLicensed: false,
-        siteName: 'Mattermost',
+        siteName: 'ZeroChat',
     };
 
     test('should match snapshot, default', () => {

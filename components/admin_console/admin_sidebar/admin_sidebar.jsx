@@ -732,7 +732,7 @@ export default class AdminSidebar extends React.Component {
                                     title={
                                         <FormattedMessage
                                             id='admin.sidebar.nativeAppLinks'
-                                            defaultMessage='Mattermost App Links'
+                                            defaultMessage='ZeroChat App Links'
                                         />
 
                                     }

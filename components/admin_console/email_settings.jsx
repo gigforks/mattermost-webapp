@@ -123,7 +123,7 @@ export default class EmailSettings extends AdminSettings {
                     <FormattedHTMLMessage
                         key='admin.email.notification.contents.full.description'
                         id='admin.email.notification.contents.full.description'
-                        defaultMessage='Sender name and channel are included in email notifications.</br>Typically used for compliance reasons if Mattermost contains confidential information and policy dictates it cannot be stored in email.'
+                        defaultMessage='Sender name and channel are included in email notifications.</br>Typically used for compliance reasons if ZeroChat contains confidential information and policy dictates it cannot be stored in email.'
                     />
                 );
             } else if (this.state.emailNotificationContentsType === EMAIL_NOTIFICATION_CONTENTS_GENERIC) {
@@ -131,7 +131,7 @@ export default class EmailSettings extends AdminSettings {
                     <FormattedHTMLMessage
                         key='admin.email.notification.contents.generic.description'
                         id='admin.email.notification.contents.generic.description'
-                        defaultMessage='Only the name of the person who sent the message, with no information about channel name or message contents are included in email notifications.</br>Typically used for compliance reasons if Mattermost contains confidential information and policy dictates it cannot be stored in email.'
+                        defaultMessage='Only the name of the person who sent the message, with no information about channel name or message contents are included in email notifications.</br>Typically used for compliance reasons if ZeroChat contains confidential information and policy dictates it cannot be stored in email.'
                     />
                 );
             }
@@ -168,7 +168,7 @@ export default class EmailSettings extends AdminSettings {
                     helpText={
                         <FormattedHTMLMessage
                             id='admin.email.notificationsDescription'
-                            defaultMessage='Typically set to true in production. When true, Mattermost attempts to send email notifications. Developers may set this field to false to skip email setup for faster development.<br />Setting this to true removes the Preview Mode banner (requires logging out and logging back in after setting is changed).'
+                            defaultMessage='Typically set to true in production. When true, ZeroChat attempts to send email notifications. Developers may set this field to false to skip email setup for faster development.<br />Setting this to true removes the Preview Mode banner (requires logging out and logging back in after setting is changed).'
                         />
                     }
                     value={this.state.sendEmailNotifications}

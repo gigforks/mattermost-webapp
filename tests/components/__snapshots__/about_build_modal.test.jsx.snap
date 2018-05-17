@@ -59,7 +59,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
         <h3
           className="about-modal__title"
         >
-          Mattermost
+          ZeroChat
            
           <FormattedMessage
             defaultMessage="Enterprise Edition"
@@ -81,7 +81,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
         >
           <div>
             <FormattedMessage
-              defaultMessage="Mattermost Version:"
+              defaultMessage="ZeroChat Version:"
               id="about.version"
               values={Object {}}
             />
@@ -121,7 +121,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
             values={Object {}}
           />
            
-          Mattermost Inc
+          ThreeFoldToken Inc
         </div>
       </div>
     </div>
@@ -135,18 +135,18 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
           values={Object {}}
         />
         <a
-          href="http://about.mattermost.com/"
+          href="/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          about.mattermost.com
+          ThreeFoldToken.com
         </a>
       </div>
       <div
         className="form-group about-modal__copyright"
       >
         <FormattedMessage
-          defaultMessage="Copyright 2015 - {currentYear} Mattermost, Inc. All rights reserved"
+          defaultMessage="Copyright 2018 - {currentYear} ZeroChat, Inc. All rights reserved"
           id="about.copyright"
           values={
             Object {
@@ -161,7 +161,7 @@ exports[`components/AboutBuildModal should match snapshot for enterprise edition
     >
       <p>
         <FormattedHTMLMessage
-          defaultMessage="Mattermost is made possible by the open source software used in our <a href=\\"https://about.mattermost.com/platform-notice-txt/\\" target=\\"_blank\\">platform</a>, <a href=\\"https://about.mattermost.com/desktop-notice-txt/\\" target=\\"_blank\\">desktop</a> and <a href=\\"https://about.mattermost.com/mobile-notice-txt/\\" target=\\"_blank\\">mobile</a> apps."
+          defaultMessage="ZeroChat is made possible by the open source software used in our platform, desktop and mobile apps."
           id="about.notice"
           values={Object {}}
         />
@@ -268,7 +268,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
         <h3
           className="about-modal__title"
         >
-          Mattermost
+          ZeroChat
            
           <FormattedMessage
             defaultMessage="Team Edition"
@@ -290,7 +290,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
         >
           <div>
             <FormattedMessage
-              defaultMessage="Mattermost Version:"
+              defaultMessage="ZeroChat Version:"
               id="about.version"
               values={Object {}}
             />
@@ -328,23 +328,23 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
     >
       <div>
         <FormattedMessage
-          defaultMessage="Join the Mattermost community at "
+          defaultMessage="Join the ZeroChat community at "
           id="about.teamEditionLearn"
           values={Object {}}
         />
         <a
-          href="http://www.mattermost.org/"
+          href="http://www.threefoldtoken.com/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          mattermost.org
+          threefoldtoken.com
         </a>
       </div>
       <div
         className="form-group about-modal__copyright"
       >
         <FormattedMessage
-          defaultMessage="Copyright 2015 - {currentYear} Mattermost, Inc. All rights reserved"
+          defaultMessage="Copyright 2018 - {currentYear} ZeroChat, Inc. All rights reserved"
           id="about.copyright"
           values={
             Object {
@@ -359,7 +359,7 @@ exports[`components/AboutBuildModal should match snapshot for team edition 1`] =
     >
       <p>
         <FormattedHTMLMessage
-          defaultMessage="Mattermost is made possible by the open source software used in our <a href=\\"https://about.mattermost.com/platform-notice-txt/\\" target=\\"_blank\\">platform</a>, <a href=\\"https://about.mattermost.com/desktop-notice-txt/\\" target=\\"_blank\\">desktop</a> and <a href=\\"https://about.mattermost.com/mobile-notice-txt/\\" target=\\"_blank\\">mobile</a> apps."
+          defaultMessage="ZeroChat is made possible by the open source software used in our platform, desktop and apps."
           id="about.notice"
           values={Object {}}
         />
@@ -465,7 +465,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
         <h3
           className="about-modal__title"
         >
-          Mattermost
+          ZeroChat
            
           <FormattedMessage
             defaultMessage="Team Edition"
@@ -487,7 +487,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
         >
           <div>
             <FormattedMessage
-              defaultMessage="Mattermost Version:"
+              defaultMessage="ZeroChat Version:"
               id="about.version"
               values={Object {}}
             />
@@ -537,12 +537,12 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
     >
       <div>
         <FormattedMessage
-          defaultMessage="Join the Mattermost community at "
+          defaultMessage="Join the ZeroChat community at "
           id="about.teamEditionLearn"
           values={Object {}}
         />
         <a
-          href="http://www.mattermost.org/"
+          href="http://threefoldtoken.com/"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -553,7 +553,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
         className="form-group about-modal__copyright"
       >
         <FormattedMessage
-          defaultMessage="Copyright 2015 - {currentYear} Mattermost, Inc. All rights reserved"
+          defaultMessage="Copyright 2018 - {currentYear} ThreeFoldToken, Inc. All rights reserved"
           id="about.copyright"
           values={
             Object {
@@ -568,7 +568,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
     >
       <p>
         <FormattedHTMLMessage
-          defaultMessage="Mattermost is made possible by the open source software used in our <a href=\\"https://about.mattermost.com/platform-notice-txt/\\" target=\\"_blank\\">platform</a>, <a href=\\"https://about.mattermost.com/desktop-notice-txt/\\" target=\\"_blank\\">desktop</a> and <a href=\\"https://about.mattermost.com/mobile-notice-txt/\\" target=\\"_blank\\">mobile</a> apps."
+          defaultMessage="ZeroChat is made possible by the open source software used in our platform, desktop and mobile apps."
           id="about.notice"
           values={Object {}}
         />
@@ -674,7 +674,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
         <h3
           className="about-modal__title"
         >
-          Mattermost
+          ZeroChat
            
           <FormattedMessage
             defaultMessage="Team Edition"
@@ -696,7 +696,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
         >
           <div>
             <FormattedMessage
-              defaultMessage="Mattermost Version:"
+              defaultMessage="ZeroChat Version:"
               id="about.version"
               values={Object {}}
             />
@@ -734,27 +734,27 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
     >
       <div>
         <FormattedMessage
-          defaultMessage="Join the Mattermost community at "
+          defaultMessage="Join the ZeroChat community at "
           id="about.teamEditionLearn"
           values={Object {}}
         />
         <a
-          href="http://www.mattermost.org/"
+          href="http://threefoldtoken.com/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          mattermost.org
+          threefoldtoken.com
         </a>
       </div>
       <div
         className="form-group about-modal__copyright"
       >
         <FormattedMessage
-          defaultMessage="Copyright 2015 - {currentYear} Mattermost, Inc. All rights reserved"
+          defaultMessage="Copyright 2018 - {currentYear} ThreeFoldToken, Inc. All rights reserved"
           id="about.copyright"
           values={
             Object {
-              "currentYear": 2017,
+              "currentYear": 2018,
             }
           }
         />
@@ -765,7 +765,7 @@ exports[`components/AboutBuildModal should show dev if this is a dev build 1`] =
     >
       <p>
         <FormattedHTMLMessage
-          defaultMessage="Mattermost is made possible by the open source software used in our <a href=\\"https://about.mattermost.com/platform-notice-txt/\\" target=\\"_blank\\">platform</a>, <a href=\\"https://about.mattermost.com/desktop-notice-txt/\\" target=\\"_blank\\">desktop</a> and <a href=\\"https://about.mattermost.com/mobile-notice-txt/\\" target=\\"_blank\\">mobile</a> apps."
+          defaultMessage="ZeroChat is made possible by the open source software used in our platform, desktop and mobile apps."
           id="about.notice"
           values={Object {}}
         />

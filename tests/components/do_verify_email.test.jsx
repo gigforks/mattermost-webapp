@@ -14,7 +14,7 @@ describe('components/DoVerifyEmail', () => {
                 email: 'test@example.com',
             },
         },
-        siteName: 'Mattermost',
+        siteName: 'ZeroChat',
         actions: {verifyUserEmail: jest.fn()},
     };
 

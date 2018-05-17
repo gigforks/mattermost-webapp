@@ -188,7 +188,7 @@ export default class DataRetentionSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.data_retention.messageRetentionDays.description'
-                            defaultMessage='Set how many days messages are kept in Mattermost. Messages, including file attachments older than the duration you set will be deleted nightly. The minimum time is one day.'
+                            defaultMessage='Set how many days messages are kept in ZeroChat. Messages, including file attachments older than the duration you set will be deleted nightly. The minimum time is one day.'
                         />
                     }
                     value={this.state.messageRetentionDays}
