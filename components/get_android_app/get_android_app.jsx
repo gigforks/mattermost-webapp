@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -16,7 +16,7 @@ export default function GetAndroidApp({androidAppDownloadLink}) {
             <h1 className='get-app__header'>
                 <FormattedMessage
                     id='get_app.androidHeader'
-                    defaultMessage='Mattermost works best if you switch to our Android app'
+                    defaultMessage='ZeroChat works best if you switch to our Android app'
                 />
             </h1>
             <hr/>
@@ -29,13 +29,13 @@ export default function GetAndroidApp({androidAppDownloadLink}) {
                     <span className='get-android-app__app-name'>
                         <FormattedMessage
                             id='get_app.androidAppName'
-                            defaultMessage='Mattermost for Android'
+                            defaultMessage='ZeroChat for Android'
                         />
                     </span>
                     <span className='get-android-app__app-creator'>
                         <FormattedMessage
-                            id='get_app.mattermostInc'
-                            defaultMessage='Mattermost, Inc'
+                            id='get_app.ZeroChatInc'
+                            defaultMessage='ZeroChat, Inc'
                         />
                     </span>
                 </div>

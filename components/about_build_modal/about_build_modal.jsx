@@ -6,7 +6,7 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedHTMLMessage, FormattedMessage} from 'react-intl';
 
-import ThreeFoldLogo from 'images/threefold.png';
+import ThreeFoldLogo from 'components/svg/mattermost_logo';
 
 export default class AboutBuildModal extends React.PureComponent {
     static defaultProps = {

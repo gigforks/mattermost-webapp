@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 
 import {Preferences} from 'utils/constants.jsx';
-import ThreeFoldLogo from 'images/threefold.png';
+import ThreeFoldLogo from 'components/svg/mattermost_logo';
 
 export default class SystemNotice extends React.PureComponent {
     static propTypes = {
