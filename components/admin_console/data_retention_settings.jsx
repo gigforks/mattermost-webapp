@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -208,7 +208,7 @@ export default class DataRetentionSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.data_retention.fileRetentionDays.description'
-                            defaultMessage='Set how many days file uploads are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.'
+                            defaultMessage='Set how many days file uploads are kept in ZeroChat. Files older than the duration you set will be deleted nightly. The minimum time is one day.'
                         />
                     }
                     value={this.state.fileRetentionDays}
@@ -231,7 +231,7 @@ export default class DataRetentionSettings extends AdminSettings {
                             values={{
                                 documentationLink: (
                                     <a
-                                        href='https://about.mattermost.com/default-dataretention-documentation/'
+                                        href='/'
                                         rel='noopener noreferrer'
                                         target='_blank'
                                     >
@@ -257,7 +257,7 @@ export default class DataRetentionSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.data_retention.enableMessageDeletion.description'
-                            defaultMessage='Set how long Mattermost keeps messages in channels and direct messages.'
+                            defaultMessage='Set how long ZeroChat keeps messages in channels and direct messages.'
                         />
                     }
                     value={this.state.enableMessageDeletion}
@@ -277,7 +277,7 @@ export default class DataRetentionSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.data_retention.enableFileDeletion.description'
-                            defaultMessage='Set how long Mattermost keeps file uploads in channels and direct messages.'
+                            defaultMessage='Set how long ZeroChat keeps file uploads in channels and direct messages.'
                         />
                     }
                     value={this.state.enableFileDeletion}

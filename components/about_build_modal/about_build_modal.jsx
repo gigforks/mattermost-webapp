@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -6,7 +6,7 @@ import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {FormattedHTMLMessage, FormattedMessage} from 'react-intl';
 
-import MattermostLogo from 'components/svg/mattermost_logo';
+import ThreeFoldLogo from 'images/threefold.png';
 
 export default class AboutBuildModal extends React.PureComponent {
     static defaultProps = {
@@ -72,14 +72,14 @@ export default class AboutBuildModal extends React.PureComponent {
             <div>
                 <FormattedMessage
                     id='about.teamEditionLearn'
-                    defaultMessage='Join the Mattermost community at '
+                    defaultMessage='Join the ZeroChat community at '
                 />
                 <a
                     target='_blank'
                     rel='noopener noreferrer'
-                    href='http://www.mattermost.org/'
+                    href='http://www.threefoldtoken.com/'
                 >
-                    {'mattermost.org'}
+                    {'threefoldtoken.com'}
                 </a>
             </div>
         );
@@ -109,9 +109,9 @@ export default class AboutBuildModal extends React.PureComponent {
                     <a
                         target='_blank'
                         rel='noopener noreferrer'
-                        href='http://about.mattermost.com/'
+                        href='http://threefoldtoken.com/'
                     >
-                        {'about.mattermost.com'}
+                        {'threefoldtoken.com'}
                     </a>
                 </div>
             );
@@ -164,23 +164,23 @@ export default class AboutBuildModal extends React.PureComponent {
                     <Modal.Title>
                         <FormattedMessage
                             id='about.title'
-                            defaultMessage='About Mattermost'
+                            defaultMessage='About ZeroChat'
                         />
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className='about-modal__content'>
                         <div className='about-modal__logo'>
-                            <MattermostLogo/>
+                            <ThreeFoldLogo/>
                         </div>
                         <div>
-                            <h3 className='about-modal__title'>{'Mattermost'} {title}</h3>
+                            <h3 className='about-modal__title'>{'ZeroChat'} {title}</h3>
                             <p className='about-modal__subtitle padding-bottom'>{subTitle}</p>
                             <div className='form-group less'>
                                 <div>
                                     <FormattedMessage
                                         id='about.version'
-                                        defaultMessage='Mattermost Version:'
+                                        defaultMessage='ZeroChat Version:'
                                     />
                                     <span id='versionString'>{'\u00a0' + mmversion}</span>
                                 </div>
@@ -208,7 +208,7 @@ export default class AboutBuildModal extends React.PureComponent {
                         <div className='form-group about-modal__copyright'>
                             <FormattedMessage
                                 id='about.copyright'
-                                defaultMessage='Copyright 2015 - {currentYear} Mattermost, Inc. All rights reserved'
+                                defaultMessage='Copyright 2015 - {currentYear} ZeroChat, Inc. All rights reserved'
                                 values={{
                                     currentYear: new Date().getFullYear(),
                                 }}
@@ -219,7 +219,7 @@ export default class AboutBuildModal extends React.PureComponent {
                         <p>
                             <FormattedHTMLMessage
                                 id='about.notice'
-                                defaultMessage='Mattermost is made possible by the open source software used in our <a href="https://about.mattermost.com/platform-notice-txt/" target="_blank">platform</a>, <a href="https://about.mattermost.com/desktop-notice-txt/" target="_blank">desktop</a> and <a href="https://about.mattermost.com/mobile-notice-txt/" target="_blank">mobile</a> apps.'
+                                defaultMessage='ZeroChat is made possible by the open source software used in our <a href="https://threefoldtoken.com" target="_blank">platform</a>'
                             />
                         </p>
                     </div>

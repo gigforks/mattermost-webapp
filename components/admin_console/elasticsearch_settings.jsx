@@ -166,7 +166,7 @@ export default class ElasticsearchSettings extends AdminSettings {
                             values={{
                                 documentationLink: (
                                     <a
-                                        href='https://about.mattermost.com/default-elasticsearch-documentation/'
+                                        href='/'
                                         rel='noopener noreferrer'
                                         target='_blank'
                                     >
@@ -199,7 +199,7 @@ export default class ElasticsearchSettings extends AdminSettings {
                             values={{
                                 documentationLink: (
                                     <a
-                                        href='https://about.mattermost.com/default-elasticsearch-server-setup/'
+                                        href='/'
                                         rel='noopener noreferrer'
                                         target='_blank'
                                     >
@@ -281,7 +281,7 @@ export default class ElasticsearchSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.elasticsearch.testHelpText'
-                            defaultMessage='Tests if the Mattermost server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages.'
+                            defaultMessage='Tests if the ZeroChat server can connect to the Elasticsearch server specified. Testing the connection only saves the configuration if the test is successful. See log file for more detailed error messages.'
                         />
                     }
                     buttonText={

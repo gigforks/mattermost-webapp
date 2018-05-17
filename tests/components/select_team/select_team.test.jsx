@@ -34,7 +34,7 @@ describe('components/select_team/SelectTeam', () => {
             {id: 'team_id_2', delete_at: 0, name: 'b-team', display_name: 'B Team'},
         ],
         roles: {system_admin: {name: 'system_admin'}, system_user: {name: 'system_user'}},
-        siteName: 'Mattermost',
+        siteName: 'ZeroChat',
         actions: {
             getTeams: jest.fn(),
             loadRolesIfNeeded: jest.fn(),

@@ -18,7 +18,7 @@ export default function ErrorMessage({type, message, service}) {
                 <div>
                     <FormattedMessage
                         id='error.local_storage.message'
-                        defaultMessage='Mattermost was unable to load because a setting in your browser prevents the use of its local storage features. To allow Mattermost to load, try the following actions:'
+                        defaultMessage='ZeroChat was unable to load because a setting in your browser prevents the use of its local storage features. To allow ZeroChat to load, try the following actions:'
                     />
                     <ul>
                         <li>
@@ -72,7 +72,7 @@ export default function ErrorMessage({type, message, service}) {
                             values={{
                                 link: (
                                     <ErrorLink
-                                        url={'https://docs.mattermost.com/deployment/sso-google.html'}
+                                        url={'/'}
                                         messageId={'error.oauth_missing_code.google.link'}
                                         defaultMessage={'Google Apps'}
                                     />
@@ -83,11 +83,11 @@ export default function ErrorMessage({type, message, service}) {
                     <p>
                         <FormattedMessage
                             id='error.oauth_missing_code.office365'
-                            defaultMessage='For {link} make sure the administrator of your Microsoft organization has enabled the Mattermost app.'
+                            defaultMessage='For {link} make sure the administrator of your Microsoft organization has enabled the ZeroChat app.'
                             values={{
                                 link: (
                                     <ErrorLink
-                                        url={'https://docs.mattermost.com/deployment/sso-office.html'}
+                                        url={'/'}
                                         messageId={'error.oauth_missing_code.office365.link'}
                                         defaultMessage={'Office 365'}
                                     />
@@ -102,7 +102,7 @@ export default function ErrorMessage({type, message, service}) {
                             values={{
                                 link: (
                                     <ErrorLink
-                                        url={'https://docs.mattermost.com/deployment/sso-gitlab.html'}
+                                        url={'/'}
                                         messageId={'error.oauth_missing_code.gitlab.link'}
                                         defaultMessage={'GitLab'}
                                     />
@@ -117,7 +117,7 @@ export default function ErrorMessage({type, message, service}) {
                             values={{
                                 link: (
                                     <ErrorLink
-                                        url={'https://forum.mattermost.org/c/trouble-shoot'}
+                                        url={'/'}
                                         messageId={'error.oauth_missing_code.forum.link'}
                                         defaultMessage={'Troubleshooting forum'}
                                     />

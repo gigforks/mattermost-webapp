@@ -18,8 +18,8 @@ import githubIcon from 'images/themes/code_themes/github.png';
 import monokaiIcon from 'images/themes/code_themes/monokai.png';
 import solarizedDarkIcon from 'images/themes/code_themes/solarized-dark.png';
 import solarizedLightIcon from 'images/themes/code_themes/solarized-light.png';
-import mattermostThemeImage from 'images/themes/mattermost.png';
-import mattermostDarkThemeImage from 'images/themes/mattermost_dark.png';
+import threefolfThemeImage from 'images/themes/mattermost.png';
+import threefoldDarkThemeImage from 'images/themes/mattermost_dark.png';
 import defaultThemeImage from 'images/themes/organization.png';
 import windows10ThemeImage from 'images/themes/windows_dark.png';
 import logoWebhook from 'images/webhook_icon.jpg';
@@ -667,7 +667,7 @@ export const Constants = {
             mentionHighlightBg: '#ffe577',
             mentionHighlightLink: '#166de0',
             codeTheme: 'github',
-            image: mattermostThemeImage,
+            image: threefolfThemeImage,
         },
         organization: {
             type: 'Organization',
@@ -696,8 +696,8 @@ export const Constants = {
             codeTheme: 'github',
             image: defaultThemeImage,
         },
-        mattermostDark: {
-            type: 'Mattermost Dark',
+        ZeroChatDark: {
+            type: 'ZeroChat Dark',
             sidebarBg: '#1b2c3e',
             sidebarText: '#ffffff',
             sidebarUnreadText: '#ffffff',
@@ -721,7 +721,7 @@ export const Constants = {
             mentionHighlightBg: '#984063',
             mentionHighlightLink: '#a4ffeb',
             codeTheme: 'solarized-dark',
-            image: mattermostDarkThemeImage,
+            image: threefoldDarkThemeImage,
         },
         windows10: {
             type: 'Windows Dark',
@@ -1072,7 +1072,7 @@ export const Constants = {
     FeatureTogglePrefix: 'feature_enabled_',
     PRE_RELEASE_FEATURES: {
         MARKDOWN_PREVIEW: {
-            label: 'markdown_preview', // github issue: https://github.com/mattermost/platform/pull/1389
+            label: 'markdown_preview', // github issue: https://github.com/gigforks/
             description: 'Show markdown preview option in message input box',
         },
     },
@@ -1102,8 +1102,8 @@ export const Constants = {
     EMOJI_PATH: '/static/emoji',
     RECENT_EMOJI_KEY: 'recentEmojis',
     DEFAULT_WEBHOOK_LOGO: logoWebhook,
-    MHPNS: 'https://push.mattermost.com',
-    MTPNS: 'http://push-test.mattermost.com',
+    MHPNS: '/',
+    MTPNS: '/',
     MAX_PREV_MSGS: 100,
     POST_COLLAPSE_TIMEOUT: 1000 * 60 * 5, // five minutes
     PERMISSIONS_ALL: 'all',

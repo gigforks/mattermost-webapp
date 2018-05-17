@@ -361,7 +361,7 @@ export class PolicySettings extends AdminSettings {
                             values={{
                                 commandLineToolLink: (
                                     <a
-                                        href='https://docs.mattermost.com/administration/command-line-tools.html'
+                                        href='/'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                     >
@@ -470,7 +470,7 @@ export class PolicySettings extends AdminSettings {
                             values={{
                                 commandLineToolLink: (
                                     <a
-                                        href='https://docs.mattermost.com/administration/command-line-tools.html'
+                                        href='/'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                     >

@@ -111,7 +111,7 @@ class LicenseSettings extends React.Component {
 
         if (this.props.license.IsLicensed === 'true') {
             // Note: DO NOT LOCALISE THESE STRINGS. Legally we can not since the license is in English.
-            edition = 'Mattermost Enterprise Edition. Enterprise features on this server have been unlocked with a license key and a valid subscription.';
+            edition = 'ZeroChat Enterprise Edition. Enterprise features on this server have been unlocked with a license key and a valid subscription.';
             licenseType = (
                 <div>
                     <p>
@@ -124,7 +124,7 @@ class LicenseSettings extends React.Component {
                     {`Start date of license: ${startsAt}`}<br/>
                     {`Expiry date of license: ${expiresAt}`}<br/>
                     <br/>
-                    {'See also '}<a href='https://about.mattermost.com/enterprise-edition-terms/'>{'Enterprise Edition Terms of Service'}</a>{' and '}<a href='https://about.mattermost.com/privacy/'>{'Privacy Policy.'}</a>
+                    {'See also '}<a href='/'>{'Enterprise Edition Terms of Service'}</a>{' and '}<a href='/'>{'Privacy Policy.'}</a>
                 </div>
             );
 
@@ -152,13 +152,13 @@ class LicenseSettings extends React.Component {
             // Note: DO NOT LOCALISE THESE STRINGS. Legally we can not since the license is in English.
             edition = (
                 <p>
-                    {'Mattermost Enterprise Edition. Unlock enterprise features in this software through the purchase of a subscription from '}
+                    {'ZeroChat Enterprise Edition. Unlock enterprise features in this software through the purchase of a subscription from '}
                     <a
                         target='_blank'
                         rel='noopener noreferrer'
-                        href='https://mattermost.com/'
+                        href='https://threefoldtoken.com/'
                     >
-                        {'https://mattermost.com/'}
+                        {'https://threefoldtoken.com/'}
                     </a>
                 </p>
             );
@@ -189,7 +189,7 @@ class LicenseSettings extends React.Component {
                         <input
                             ref='fileInput'
                             type='file'
-                            accept='.mattermost-license'
+                            accept='.zerochat-license'
                             onChange={this.handleChange}
                         />
                     </div>
@@ -213,7 +213,7 @@ class LicenseSettings extends React.Component {
                     <p className='help-text no-margin'>
                         <FormattedHTMLMessage
                             id='admin.license.uploadDesc'
-                            defaultMessage='Upload a license key for Mattermost Enterprise Edition to upgrade this server. <a href="http://mattermost.com" target="_blank">Visit us online</a> to learn more about the benefits of Enterprise Edition or to purchase a key.'
+                            defaultMessage='Upload a license key for ZeroChat Enterprise Edition to upgrade this server. <a href="/" target="_blank">Visit us online</a> to learn more about the benefits of Enterprise Edition or to purchase a key.'
                         />
                     </p>
                 </div>

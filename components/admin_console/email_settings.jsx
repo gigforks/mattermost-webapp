@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -205,11 +205,11 @@ export default class EmailSettings extends AdminSettings {
                             defaultMessage='Notification Display Name:'
                         />
                     }
-                    placeholder={Utils.localizeMessage('admin.email.notificationDisplayExample', 'Ex: "Mattermost Notification", "System", "No-Reply"')}
+                    placeholder={Utils.localizeMessage('admin.email.notificationDisplayExample', 'Ex: "ZeroChat Notification", "System", "No-Reply"')}
                     helpText={
                         <FormattedMessage
                             id='admin.email.notificationDisplayDescription'
-                            defaultMessage='Display name on email account used when sending notification emails from Mattermost.'
+                            defaultMessage='Display name on email account used when sending notification emails from ZeroChat.'
                         />
                     }
                     value={this.state.feedbackName}
@@ -225,11 +225,11 @@ export default class EmailSettings extends AdminSettings {
                             defaultMessage='Notification From Address:'
                         />
                     }
-                    placeholder={Utils.localizeMessage('admin.email.notificationEmailExample', 'Ex: "mattermost@yourcompany.com", "admin@yourcompany.com"')}
+                    placeholder={Utils.localizeMessage('admin.email.notificationEmailExample', 'Ex: "ZeroChat@yourcompany.com", "admin@yourcompany.com"')}
                     helpText={
                         <FormattedMessage
                             id='admin.email.notificationEmailDescription'
-                            defaultMessage='Email address displayed on email account used when sending notification emails from Mattermost.'
+                            defaultMessage='Email address displayed on email account used when sending notification emails from ZeroChat.'
                         />
                     }
                     value={this.state.feedbackEmail}
@@ -249,7 +249,7 @@ export default class EmailSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.email.notificationOrganizationDescription'
-                            defaultMessage='Organization name and address displayed on email notifications from Mattermost, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and address will not be displayed.'
+                            defaultMessage='Organization name and address displayed on email notifications from ZeroChat, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and address will not be displayed.'
                         />
                     }
                     value={this.state.feedbackOrganization}
@@ -379,7 +379,7 @@ export default class EmailSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.email.skipServerCertificateVerification.description'
-                            defaultMessage='When true, Mattermost will not verify the email server certificate.'
+                            defaultMessage='When true, ZeroChat will not verify the email server certificate.'
                         />
                     }
                     value={this.state.skipServerCertificateVerification}

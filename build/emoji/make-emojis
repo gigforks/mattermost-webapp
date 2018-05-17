@@ -17,8 +17,8 @@ if File.directory? emoji_path
 end
 Dir.mkdir emoji_path
 
-Emoji.create('mattermost')
-FileUtils.cp(File.join(project_root, 'images', 'icon64x64.png'), File.join(emoji_path, 'mattermost.png'))
+Emoji.create('threefold')
+FileUtils.cp(File.join(project_root, 'images', 'icon64x64.png'), File.join(emoji_path, 'threefold.png'))
 
 custom_aliases = {
     "ca" => "canada",

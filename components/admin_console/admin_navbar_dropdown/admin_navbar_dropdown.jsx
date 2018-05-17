@@ -171,7 +171,7 @@ export default class AdminNavbarDropdown extends React.Component {
                         />
                         <li>
                             <Link
-                                to='https://about.mattermost.com/administrators-guide/'
+                                to='/'
                                 rel='noopener noreferrer'
                                 target='_blank'
                             >
@@ -183,7 +183,7 @@ export default class AdminNavbarDropdown extends React.Component {
                         </li>
                         <li>
                             <Link
-                                to='https://about.mattermost.com/troubleshooting-forum/'
+                                to='/'
                                 rel='noopener noreferrer'
                                 target='_blank'
                             >
@@ -195,7 +195,7 @@ export default class AdminNavbarDropdown extends React.Component {
                         </li>
                         <li>
                             <Link
-                                to='https://about.mattermost.com/commercial-support/'
+                                to='/'
                                 rel='noopener noreferrer'
                                 target='_blank'
                             >
@@ -212,7 +212,7 @@ export default class AdminNavbarDropdown extends React.Component {
                             >
                                 <FormattedMessage
                                     id='navbar_dropdown.about'
-                                    defaultMessage='About Mattermost'
+                                    defaultMessage='About ZeroChat'
                                 />
                             </a>
                         </li>

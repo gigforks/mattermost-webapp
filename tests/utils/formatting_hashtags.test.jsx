@@ -184,8 +184,8 @@ describe('TextFormatting.Hashtags', function() {
         );
 
         assert.equal(
-            TextFormatting.formatText('#:mattermost:').trim(),
-            '<p>#<span data-emoticon="mattermost">:mattermost:</span></p>'
+            TextFormatting.formatText('#:zerochat:').trim(),
+            '<p>#<span data-emoticon="zerochat">:zerochat:</span></p>'
         );
 
         assert.equal(

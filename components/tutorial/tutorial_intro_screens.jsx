@@ -35,10 +35,10 @@ export default class TutorialIntroScreens extends React.Component {
     handleNext = () => {
         switch (this.state.currentScreen) {
         case 0:
-            trackEvent('tutorial', 'tutorial_screen_1_welcome_to_mattermost_next');
+            trackEvent('tutorial', 'tutorial_screen_1_welcome_to_zerochat_next');
             break;
         case 1:
-            trackEvent('tutorial', 'tutorial_screen_2_how_mattermost_works_next');
+            trackEvent('tutorial', 'tutorial_screen_2_how_zerochat_works_next');
             break;
         case 2:
             trackEvent('tutorial', 'tutorial_screen_3_youre_all_set_next');
@@ -64,10 +64,10 @@ export default class TutorialIntroScreens extends React.Component {
 
         switch (this.state.currentScreen) {
         case 0:
-            trackEvent('tutorial', 'tutorial_screen_1_welcome_to_mattermost_skip');
+            trackEvent('tutorial', 'tutorial_screen_1_welcome_to_zerochat_skip');
             break;
         case 1:
-            trackEvent('tutorial', 'tutorial_screen_2_how_mattermost_works_skip');
+            trackEvent('tutorial', 'tutorial_screen_2_how_zerochat_works_skip');
             break;
         case 2:
             trackEvent('tutorial', 'tutorial_screen_3_youre_all_set_skip');
@@ -100,7 +100,7 @@ export default class TutorialIntroScreens extends React.Component {
                 <FormattedHTMLMessage
                     id='tutorial_intro.screenOne'
                     defaultMessage='<h3>Welcome to:</h3>
-                    <h1>Mattermost</h1>
+                    <h1>ZeroChat</h1>
                     <p>Your team communication all in one place, instantly searchable and available anywhere.</p>
                     <p>Keep your team connected to help them achieve what matters most.</p>'
                 />
@@ -160,7 +160,7 @@ export default class TutorialIntroScreens extends React.Component {
             <div id='tutorialIntroTwo'>
                 <FormattedHTMLMessage
                     id='tutorial_intro.screenTwo'
-                    defaultMessage='<h3>How Mattermost works:</h3>
+                    defaultMessage='<h3>How ZeroChat works:</h3>
                     <p>Communication happens in public discussion channels, private channels and direct messages.</p>
                     <p>Everything is archived and searchable from any web-enabled desktop, laptop or phone.</p>'
                 />
