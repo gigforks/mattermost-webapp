@@ -19,6 +19,7 @@ import DatabaseSettings from 'components/admin_console/database_settings.jsx';
 import ElasticsearchSettings from 'components/admin_console/elasticsearch_settings.jsx';
 import EmailSettings from 'components/admin_console/email_settings.jsx';
 import GitLabSettings from 'components/admin_console/gitlab_settings.jsx';
+import IyoSettings from 'components/admin_console/iyo_settings.jsx';
 import MessageExportSettings from 'components/admin_console/message_export_settings';
 import OAuthSettings from 'components/admin_console/oauth_settings.jsx';
 import PasswordSettings from 'components/admin_console/password_settings.jsx';
@@ -248,6 +249,11 @@ export default class AdminConsole extends React.Component {
                                     <SCRoute
                                         path={`${props.match.url}/gitlab`}
                                         component={GitLabSettings}
+                                        extraProps={extraProps}
+                                    />
+                                    <SCRoute
+                                        path={`${props.match.url}/itsyouonline`}
+                                        component={IyoSettings}
                                         extraProps={extraProps}
                                     />
                                     <SCRoute

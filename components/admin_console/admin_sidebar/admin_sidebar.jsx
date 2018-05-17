@@ -70,6 +70,7 @@ export default class AdminSidebar extends React.Component {
 
     render() {
         let oauthSettings = null;
+        let iyoSettings = null;
         let ldapSettings = null;
         let samlSettings = null;
         let clusterSettings = null;
@@ -232,6 +233,17 @@ export default class AdminSidebar extends React.Component {
                 />
             );
         }
+        iyoSettings = (
+            <AdminSidebarSection
+                name='itsyouonline'
+                title={
+                    <FormattedMessage
+                        id='admin.sidebar.iyo'
+                        defaultMessage='Itsyou.online'
+                    />
+                }
+            />
+        );
 
         if (this.props.license.IsLicensed === 'true') {
             audits = (
@@ -516,6 +528,7 @@ export default class AdminSidebar extends React.Component {
                                     }
                                 />
                                 {oauthSettings}
+                                {iyoSettings}
                                 {ldapSettings}
                                 {samlSettings}
                                 {mfaSettings}

@@ -487,6 +487,24 @@ class UserSettingsGeneralTab extends React.Component {
                         {helpText}
                     </div>
                 );
+            } else if (this.props.user.auth_service === Constants.IYO_SERVICE) {
+                inputs.push(
+                    <div
+                        key='oauthEmailInfo'
+                        className='form-group'
+                    >
+                        <div className='setting-list__hint col-sm-12'>
+                            <FormattedMessage
+                                id='user.settings.general.emailIyoCantUpdate'
+                                defaultMessage='Login occurs through Itsyou.online. Email cannot be updated. Email address used for notifications is {email}.'
+                                values={{
+                                    email: this.state.originalEmail,
+                                }}
+                            />
+                        </div>
+                        {helpText}
+                    </div>
+                );
             } else if (this.props.user.auth_service === Constants.GOOGLE_SERVICE) {
                 inputs.push(
                     <div
@@ -607,6 +625,16 @@ class UserSettingsGeneralTab extends React.Component {
                     <FormattedMessage
                         id='user.settings.general.loginGitlab'
                         defaultMessage='Login done through GitLab ({email})'
+                        values={{
+                            email: this.state.originalEmail,
+                        }}
+                    />
+                );
+            } else if (this.props.user.auth_service === Constants.IYO_SERVICE) {
+                describe = (
+                    <FormattedMessage
+                        id='user.settings.general.loginIyo'
+                        defaultMessage='Login done through itsyou.online ({email})'
                         values={{
                             email: this.state.originalEmail,
                         }}

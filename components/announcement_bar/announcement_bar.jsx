@@ -43,6 +43,7 @@ export default class AnnouncementBar extends React.PureComponent {
         bannerColor: PropTypes.string,
         bannerTextColor: PropTypes.string,
         enableSignUpWithGitLab: PropTypes.bool.isRequired,
+        enableSignUpWithIyo: PropTypes.bool.isRequired,
     }
 
     constructor(props) {
@@ -279,9 +280,9 @@ export default class AnnouncementBar extends React.PureComponent {
         } else if (message === ErrorBarTypes.SITE_URL) {
             let id;
             let defaultMessage;
-            if (this.props.enableSignUpWithGitLab) {
+            if (this.props.enableSignUpWithGitLab || this.props.enableSignUpWithIyo) {
                 id = 'error_bar.site_url_gitlab';
-                defaultMessage = 'Please configure your {docsLink} in the System Console or in gitlab.rb if you\'re using GitLab Mattermost.';
+                defaultMessage = 'Either you are using itsyou.online sso or Please configure your {docsLink} in the System Console or in gitlab.rb if you\'re using GitLab Mattermost.';
             } else {
                 id = 'error_bar.site_url';
                 defaultMessage = 'Please configure your {docsLink} in the System Console.';

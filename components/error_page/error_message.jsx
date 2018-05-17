@@ -112,6 +112,21 @@ export default function ErrorMessage({type, message, service}) {
                     </p>
                     <p>
                         <FormattedMessage
+                            id='error.oauth_missing_code.iyo'
+                            defaultMessage='For {link} please make sure you followed the setup instructions.'
+                            values={{
+                                link: (
+                                    <ErrorLink
+                                        url={'https://docs.mattermost.com/deployment/sso-gitlab.html'}
+                                        messageId={'error.oauth_missing_code.iyo.link'}
+                                        defaultMessage={'itsyou.online'}
+                                    />
+                                ),
+                            }}
+                        />
+                    </p>
+                    <p>
+                        <FormattedMessage
                             id='error.oauth_missing_code.forum'
                             defaultMessage="If you reviewed the above and are still having trouble with configuration, you may post in our {link} where we'll be happy to help with issues during setup."
                             values={{

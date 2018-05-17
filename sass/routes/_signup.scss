@@ -257,6 +257,17 @@
                 }
             }
 
+            &.iyo {
+                background: #939598;
+                font-size: 1.3em;
+                text-transform: uppercase; 
+                padding: 0 0 45px 0;
+                text-align: center;
+                &:hover {
+                    background: darken(#939598, 10%);
+                }
+            }
+
             &.google {
                 background: #dd4b39;
 

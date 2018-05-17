@@ -46,6 +46,7 @@ export default class LoginController extends React.Component {
             enableSignInWithUsername: PropTypes.bool.isRequired,
             enableSignUpWithEmail: PropTypes.bool.isRequired,
             enableSignUpWithGitLab: PropTypes.bool.isRequired,
+            enableSignUpWithIyo: PropTypes.bool.isRequired,
             enableSignUpWithGoogle: PropTypes.bool.isRequired,
             enableSignUpWithOffice365: PropTypes.bool.isRequired,
             experimentalPrimaryTeam: PropTypes.string,
@@ -323,6 +324,7 @@ export default class LoginController extends React.Component {
     checkSignUpEnabled() {
         return this.props.enableSignUpWithEmail ||
             this.props.enableSignUpWithGitLab ||
+            this.props.enableSignUpWithIyo ||
             this.props.enableSignUpWithOffice365 ||
             this.props.enableSignUpWithGoogle ||
             this.props.enableLdap ||
@@ -380,6 +382,7 @@ export default class LoginController extends React.Component {
 
         const ldapEnabled = this.state.ldapEnabled;
         const gitlabSigninEnabled = this.props.enableSignUpWithGitLab;
+        const iyoSigninEnabled = this.props.enableSignUpWithIyo;
         const googleSigninEnabled = this.props.enableSignUpWithGoogle;
         const office365SigninEnabled = this.props.enableSignUpWithOffice365;
         const samlSigninEnabled = this.state.samlEnabled;
@@ -503,7 +506,7 @@ export default class LoginController extends React.Component {
             );
         }
 
-        if ((emailSigninEnabled || usernameSigninEnabled || ldapEnabled) && (gitlabSigninEnabled || googleSigninEnabled || samlSigninEnabled || office365SigninEnabled)) {
+        if ((emailSigninEnabled || usernameSigninEnabled || ldapEnabled) && (gitlabSigninEnabled || iyoSigninEnabled || googleSigninEnabled || samlSigninEnabled || office365SigninEnabled)) {
             loginControls.push(
                 <div
                     key='divider'
@@ -539,6 +542,25 @@ export default class LoginController extends React.Component {
                             <FormattedMessage
                                 id='login.gitlab'
                                 defaultMessage='GitLab'
+                            />
+                        </span>
+                    </span>
+                </a>
+            );
+        }
+
+        if (iyoSigninEnabled) {
+            loginControls.push(
+                <a
+                    className='btn btn-custom-login iyo'
+                    key='itsyouonline'
+                    href={Client4.getOAuthRoute() + '/itsyouonline/login' + this.props.location.search}
+                >
+                    <span>
+                        <span>
+                            <FormattedMessage
+                                id='login.itsyouonline'
+                                defaultMessage='itsyou.online'
                             />
                         </span>
                     </span>

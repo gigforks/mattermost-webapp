@@ -26,6 +26,7 @@ function mapStateToProps(state, ownProps) {
     const enforceMultifactorAuthentication = config.EnforceMultifactorAuthentication === 'true';
     const enableSignUpWithEmail = config.EnableSignUpWithEmail === 'true';
     const enableSignUpWithGitLab = config.EnableSignUpWithGitLab === 'true';
+    const enableSignUpWithIyo = config.EnableSignUpWithIyo === 'true';
     const enableSignUpWithGoogle = config.EnableSignUpWithGoogle === 'true';
     const enableLdap = config.EnableLdap === 'true';
     const enableSaml = config.EnableSaml === 'true';
@@ -41,6 +42,7 @@ function mapStateToProps(state, ownProps) {
         enforceMultifactorAuthentication,
         enableSignUpWithEmail,
         enableSignUpWithGitLab,
+        enableSignUpWithIyo,
         enableSignUpWithGoogle,
         enableLdap,
         enableSaml,

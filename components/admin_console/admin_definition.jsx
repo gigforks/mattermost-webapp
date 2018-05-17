@@ -551,7 +551,7 @@ export default {
                             label: 'admin.email.allowSignupTitle',
                             label_default: 'Enable account creation with email:',
                             help_text: 'admin.email.allowSignupDescription',
-                            help_text_default: 'When true, Mattermost allows account creation using email and password. This value should be false only when you want to limit sign up to a single sign-on service like AD/LDAP, SAML or GitLab.',
+                            help_text_default: 'When true, Mattermost allows account creation using email and password. This value should be false only when you want to limit sign up to a single sign-on service like AD/LDAP, SAML, itsyou.online or GitLab.',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_BOOL,

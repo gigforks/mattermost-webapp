@@ -22,11 +22,13 @@ export default class OAuthSettings extends AdminSettings {
         this.renderOffice365 = this.renderOffice365.bind(this);
         this.renderGoogle = this.renderGoogle.bind(this);
         this.renderGitLab = this.renderGitLab.bind(this);
+        this.renderIyo = this.renderIyo.bind(this);
         this.changeType = this.changeType.bind(this);
     }
 
     getConfigFromState(config) {
         config.GitLabSettings.Enable = false;
+        config.IyoSettings.Enable = false;
         config.GoogleSettings.Enable = false;
         config.Office365Settings.Enable = false;
 
@@ -37,6 +39,15 @@ export default class OAuthSettings extends AdminSettings {
             config.GitLabSettings.UserApiEndpoint = this.state.userApiEndpoint;
             config.GitLabSettings.AuthEndpoint = this.state.authEndpoint;
             config.GitLabSettings.TokenEndpoint = this.state.tokenEndpoint;
+        }
+
+        if (this.state.oauthType === Constants.IYO_SERVICE) {
+            config.IyoSettings.Enable = true;
+            config.IyoSettings.Id = this.state.id;
+            config.IyoSettings.Secret = this.state.secret;
+            config.IyoSettings.UserApiEndpoint = this.state.userApiEndpoint;
+            config.IyoSettings.AuthEndpoint = this.state.authEndpoint;
+            config.IyoSettings.TokenEndpoint = this.state.tokenEndpoint;
         }
 
         if (this.state.oauthType === Constants.GOOGLE_SERVICE) {
@@ -73,6 +84,9 @@ export default class OAuthSettings extends AdminSettings {
         } else if (config.GoogleSettings.Enable) {
             oauthType = Constants.GOOGLE_SERVICE;
             settings = config.GoogleSettings;
+        } else if (config.IyoSettings.Enable) {
+            oauthType = Constants.IYO_SERVICE;
+            settings = config.IyoSettings;
         } else if (config.Office365Settings.Enable) {
             oauthType = Constants.OFFICE365_SERVICE;
             settings = config.Office365Settings;
@@ -83,6 +97,7 @@ export default class OAuthSettings extends AdminSettings {
             id: settings.Id,
             secret: settings.Secret,
             gitLabUrl: config.GitLabSettings.UserApiEndpoint.replace('/api/v4/user', ''),
+            iyoUrl: config.IyoSettings.UserApiEndpoint.replace('/api/v4/user', ''),
             userApiEndpoint: settings.UserApiEndpoint,
             authEndpoint: settings.AuthEndpoint,
             tokenEndpoint: settings.TokenEndpoint,
@@ -92,9 +107,13 @@ export default class OAuthSettings extends AdminSettings {
     changeType(id, value) {
         let settings = {};
         let gitLabUrl = '';
+        let iyoUrl = '';
         if (value === Constants.GITLAB_SERVICE) {
             settings = this.config.GitLabSettings;
             gitLabUrl = settings.UserApiEndpoint.replace('/api/v4/user', '');
+        } else if (value === Constants.IYO_SERVICE) {
+            settings = this.config.IyoSettings;
+            iyoUrl = settings.UserApiEndpoint.replace('/api/v4/user', '');
         } else if (value === Constants.GOOGLE_SERVICE) {
             settings = this.config.GoogleSettings;
         } else if (value === Constants.OFFICE365_SERVICE) {
@@ -105,6 +124,7 @@ export default class OAuthSettings extends AdminSettings {
             id: settings.Id,
             secret: settings.Secret,
             gitLabUrl,
+            iyoUrl,
             userApiEndpoint: settings.UserApiEndpoint,
             authEndpoint: settings.AuthEndpoint,
             tokenEndpoint: settings.TokenEndpoint,
@@ -128,12 +148,35 @@ export default class OAuthSettings extends AdminSettings {
         });
     }
 
+    updateIyoUrl = (id, value) => {
+        let trimmedValue = value;
+        if (value.endsWith('/')) {
+            trimmedValue = value.slice(0, -1);
+        }
+
+        this.setState({
+            saveNeeded: true,
+            iyoUrl: value,
+            userApiEndpoint: trimmedValue + '/api/v4/user',
+            authEndpoint: trimmedValue + '/oauth/authorize',
+            tokenEndpoint: trimmedValue + '/oauth/token',
+        });
+    }
+
     isGitLabURLSetByEnv = () => {
         // Assume that if one of these has been set using an environment variable,
         // all of them have been set that way
         return this.isSetByEnv('GitLabSettings.AuthEndpoint') ||
             this.isSetByEnv('GitLabSettings.TokenEndpoint') ||
             this.isSetByEnv('GitLabSettings.UserApiEndpoint');
+    };
+
+    isIyoURLSetByEnv = () => {
+        // Assume that if one of these has been set using an environment variable,
+        // all of them have been set that way
+        return this.isSetByEnv('IyoSettings.AuthEndpoint') ||
+            this.isSetByEnv('IyoSettings.TokenEndpoint') ||
+            this.isSetByEnv('IyoSettings.UserApiEndpoint');
     };
 
     renderTitle() {
@@ -410,6 +453,109 @@ export default class OAuthSettings extends AdminSettings {
         );
     }
 
+    renderIyo() {
+        return (
+            <div>
+                <TextSetting
+                    id='id'
+                    label={
+                        <FormattedMessage
+                            id='admin.iyo.clientIdTitle'
+                            defaultMessage='Application ID:'
+                        />
+                    }
+                    placeholder={Utils.localizeMessage('admin.iyo.clientIdExample', 'E.g.: "jcuS8PuvcpGhpgHhlcpT1Mx42pnqMxQY"')}
+                    helpText={
+                        <FormattedMessage
+                            id='admin.iyo.clientIdDescription'
+                            defaultMessage=''
+                        />
+                    }
+                    value={this.state.id}
+                    onChange={this.handleChange}
+                    setByEnv={this.isSetByEnv('IyoSettings.Id')}
+                />
+                <TextSetting
+                    id='secret'
+                    label={
+                        <FormattedMessage
+                            id='admin.iyo.clientSecretTitle'
+                            defaultMessage='Application Secret Key:'
+                        />
+                    }
+                    placeholder={Utils.localizeMessage('admin.iyo.clientSecretExample', 'E.g.: "jcuS8PuvcpGhpgHhlcpT1Mx42pnqMxQY"')}
+                    helpText={
+                        <FormattedMessage
+                            id='admin.iyo.clientSecretDescription'
+                            defaultMessage=''
+                        />
+                    }
+                    value={this.state.secret}
+                    onChange={this.handleChange}
+                    setByEnv={this.isSetByEnv('IyoSettings.Secret')}
+                />
+                <TextSetting
+                    id='iyoUrl'
+                    label={
+                        <FormattedMessage
+                            id='admin.iyo.siteUrl'
+                            defaultMessage='Itsyou.online Site URL:'
+                        />
+                    }
+                    placeholder={Utils.localizeMessage('admin.iyo.siteUrlExample', 'E.g.: https://')}
+                    helpText={
+                        <FormattedMessage
+                            id='admin.iyo.siteUrlDescription'
+                            defaultMessage='Enter the URL of your Itsyou.online instance, e.g. https://itsyou.online.'
+                        />
+                    }
+                    value={this.state.iyoUrl}
+                    onChange={this.updateIyoUrl}
+                    setByEnv={this.isIyoSetByEnv()}
+                />
+                <TextSetting
+                    id='userApiEndpoint'
+                    label={
+                        <FormattedMessage
+                            id='admin.iyo.userTitle'
+                            defaultMessage='User API Endpoint:'
+                        />
+                    }
+                    placeholder={''}
+                    value={this.state.userApiEndpoint}
+                    disabled={true}
+                    setByEnv={false}
+                />
+                <TextSetting
+                    id='authEndpoint'
+                    label={
+                        <FormattedMessage
+                            id='admin.iyo.authTitle'
+                            defaultMessage='Auth Endpoint:'
+                        />
+                    }
+                    placeholder={''}
+                    value={this.state.authEndpoint}
+                    disabled={true}
+                    setByEnv={false}
+                />
+                <TextSetting
+                    id='tokenEndpoint'
+                    label={
+                        <FormattedMessage
+                            id='admin.iyo.tokenTitle'
+                            defaultMessage='Token Endpoint:'
+                        />
+                    }
+                    placeholder={''}
+                    value={this.state.tokenEndpoint}
+                    disabled={true}
+                    setByEnv={false}
+                />
+            </div>
+        );
+    }
+
     renderSettings() {
         let contents;
         let helpText;
@@ -419,6 +565,14 @@ export default class OAuthSettings extends AdminSettings {
                 <FormattedHTMLMessage
                     id='admin.gitlab.EnableHtmlDesc'
                     defaultMessage='<ol><li>Log in to your GitLab account and go to Profile Settings -> Applications.</li><li>Enter Redirect URIs "<your-mattermost-url>/login/gitlab/complete" (example: http://localhost:8065/login/gitlab/complete) and "<your-mattermost-url>/signup/gitlab/complete". </li><li>Then use "Application Secret Key" and "Application ID" fields from GitLab to complete the options below.</li><li>Complete the Endpoint URLs below. </li></ol>'
+                />
+            );
+        } else if (this.state.oauthType === Constants.IYO_SERVICE) {
+            contents = this.renderIyo();
+            helpText = (
+                <FormattedHTMLMessage
+                    id='admin.iyo.EnableHtmlDesc'
+                    defaultMessage=''
                 />
             );
         } else if (this.state.oauthType === Constants.GOOGLE_SERVICE) {
@@ -442,6 +596,7 @@ export default class OAuthSettings extends AdminSettings {
         const oauthTypes = [];
         oauthTypes.push({value: 'off', text: Utils.localizeMessage('admin.oauth.off', 'Do not allow sign-in via an OAuth 2.0 provider.')});
         oauthTypes.push({value: Constants.GITLAB_SERVICE, text: Utils.localizeMessage('admin.oauth.gitlab', 'GitLab')});
+        oauthTypes.push({value: Constants.IYO_SERVICE, text: Utils.localizeMessage('admin.oauth.iyo', 'itsyou.online')});
         if (this.props.license.IsLicensed === 'true') {
             if (this.props.license.GoogleOAuth === 'true') {
                 oauthTypes.push({value: Constants.GOOGLE_SERVICE, text: Utils.localizeMessage('admin.oauth.google', 'Google Apps')});

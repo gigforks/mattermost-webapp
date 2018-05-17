@@ -61,6 +61,9 @@ export default class SecurityTab extends React.Component {
         // Whether or not sign-up with GitLab is enabled.
         enableSignUpWithGitLab: PropTypes.bool,
 
+        // Whether or not sign-up with Itsyou.online is enabled.
+        enableSignUpWithIyo: PropTypes.bool,
+
         // Whether or not sign-up with Google is enabled.
         enableSignUpWithGoogle: PropTypes.bool,
 
@@ -465,6 +468,20 @@ export default class SecurityTab extends React.Component {
                         </div>
                     </div>
                 );
+            } else if (this.props.user.auth_service === Constants.IYO_SERVICE) {
+                inputs.push(
+                    <div
+                        key='oauthEmailInfo'
+                        className='form-group'
+                    >
+                        <div className='setting-list__hint col-sm-12'>
+                            <FormattedMessage
+                                id='user.settings.security.passwordIyoCantUpdate'
+                                defaultMessage='Login occurs through Itsyou.online. Password cannot be updated.'
+                            />
+                        </div>
+                    </div>
+                );
             } else if (this.props.user.auth_service === Constants.LDAP_SERVICE) {
                 inputs.push(
                     <div
@@ -578,6 +595,13 @@ export default class SecurityTab extends React.Component {
                     defaultMessage='Login done through GitLab'
                 />
             );
+        } else if (this.props.user.auth_service === Constants.IYO_SERVICE) {
+            describe = (
+                <FormattedMessage
+                    id='user.settings.security.loginIyo'
+                    defaultMessage='Login done through itsyou.online'
+                />
+            );
         } else if (this.props.user.auth_service === Constants.LDAP_SERVICE) {
             describe = (
                 <FormattedMessage
@@ -629,6 +653,7 @@ export default class SecurityTab extends React.Component {
         if (this.props.activeSection === SECTION_SIGNIN) {
             let emailOption;
             let gitlabOption;
+            let iyoOption;
             let googleOption;
             let office365Option;
             let ldapOption;
@@ -645,6 +670,23 @@ export default class SecurityTab extends React.Component {
                                 <FormattedMessage
                                     id='user.settings.security.switchGitlab'
                                     defaultMessage='Switch to using GitLab SSO'
+                                />
+                            </Link>
+                            <br/>
+                        </div>
+                    );
+                }
+
+                if (this.props.enableSignUpWithIyo) {
+                    iyoOption = (
+                        <div className='padding-bottom x2'>
+                            <Link
+                                className='btn btn-primary'
+                                to={'/claim/email_to_oauth?email=' + encodeURIComponent(user.email) + '&old_type=' + user.auth_service + '&new_type=' + Constants.IYO_SERVICE}
+                            >
+                                <FormattedMessage
+                                    id='user.settings.security.switchIyo'
+                                    defaultMessage='Switch to using itsyou.online SSO'
                                 />
                             </Link>
                             <br/>
@@ -748,6 +790,7 @@ export default class SecurityTab extends React.Component {
                 <div key='userSignInOption'>
                     {emailOption}
                     {gitlabOption}
+                    {iyoOption}
                     {googleOption}
                     {office365Option}
                     {ldapOption}
@@ -786,6 +829,13 @@ export default class SecurityTab extends React.Component {
                 <FormattedMessage
                     id='user.settings.security.gitlab'
                     defaultMessage='GitLab'
+                />
+            );
+        } else if (this.props.user.auth_service === Constants.IYO_SERVICE) {
+            describe = (
+                <FormattedMessage
+                    id='user.settings.security.iyo'
+                    defaultMessage='itsyou.online'
                 />
             );
         } else if (this.props.user.auth_service === Constants.GOOGLE_SERVICE) {
@@ -966,6 +1016,7 @@ export default class SecurityTab extends React.Component {
 
         let numMethods = 0;
         numMethods = this.props.enableSignUpWithGitLab ? numMethods + 1 : numMethods;
+        numMethods = this.props.enableSignUpWithIyo ? numMethods + 1 : numMethods;
         numMethods = this.props.enableSignUpWithGoogle ? numMethods + 1 : numMethods;
         numMethods = this.props.enableSignUpWithOffice365 ? numMethods + 1 : numMethods;
         numMethods = this.props.enableLdap ? numMethods + 1 : numMethods;

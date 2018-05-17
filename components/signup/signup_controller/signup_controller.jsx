@@ -177,6 +177,26 @@ export default class SignupController extends React.Component {
             );
         }
 
+        if (this.props.enableSignUpWithIyo) {
+            signupControls.push(
+                <a
+                    className='btn btn-custom-login btn--full iyo'
+                    key='itsyou.online'
+                    href={Client4.getOAuthRoute() + '/itsyouonline/signup' + window.location.search}
+                >
+                    <span>
+                        <span className='icon'/>
+                        <span>
+                            <FormattedMessage
+                                id='signup.itsyouonline'
+                                defaultMessage='itsyou.online Single Sign-On'
+                            />
+                        </span>
+                    </span>
+                </a>
+            );
+        }
+
         if (this.props.isLicensed && this.props.enableSignUpWithGoogle) {
             signupControls.push(
                 <a
@@ -374,6 +394,7 @@ SignupController.propTypes = {
     noAccounts: PropTypes.bool.isRequired,
     enableSignUpWithEmail: PropTypes.bool.isRequired,
     enableSignUpWithGitLab: PropTypes.bool.isRequired,
+    enableSignUpWithIyo: PropTypes.bool.isRequired,
     enableSignUpWithGoogle: PropTypes.bool.isRequired,
     enableSignUpWithOffice365: PropTypes.bool.isRequired,
     enableLDAP: PropTypes.bool.isRequired,
