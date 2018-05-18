@@ -546,7 +546,7 @@ exports[`components/AboutBuildModal should show ci if a ci build 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          mattermost.org
+          threefoldtoken.com
         </a>
       </div>
       <div

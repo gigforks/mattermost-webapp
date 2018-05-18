@@ -145,7 +145,7 @@ export default class PushSettings extends AdminSettings {
             pushServerHelpText = (
                 <FormattedHTMLMessage
                     id='admin.email.mtpnsHelp'
-                    defaultMessage='Download <a href="https://about.mattermost.com/mattermost-ios-app/" target="_blank">ZeroChat iOS app</a> from iTunes. Download <a href="/" target="_blank">ZeroChat Android app</a> from Google Play. Learn more about the <a href="/" target="_blank">ZeroChat Test Push Notification Service</a>.'
+                    defaultMessage='Download <a href="/" target="_blank">ZeroChat iOS app</a> from iTunes. Download <a href="/" target="_blank">ZeroChat Android app</a> from Google Play. Learn more about the <a href="/" target="_blank">ZeroChat Test Push Notification Service</a>.'
                 />
             );
         } else {
