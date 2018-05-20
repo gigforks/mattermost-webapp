@@ -696,7 +696,7 @@ export const Constants = {
             codeTheme: 'github',
             image: defaultThemeImage,
         },
-        TF ChatDark: {
+        TFChatDark: {
             type: 'TF Chat Dark',
             sidebarBg: '#1b2c3e',
             sidebarText: '#ffffff',

@@ -605,7 +605,7 @@ export function applyTheme(theme) {
             dndIndicator = Constants.THEMES.organization.dndIndicator;
             break;
         case 'TF Chat Dark':
-            dndIndicator = Constants.THEMES.TF ChatDark.dndIndicator;
+            dndIndicator = Constants.THEMES.TFChatDark.dndIndicator;
             break;
         case 'Windows Dark':
             dndIndicator = Constants.THEMES.windows10.dndIndicator;
