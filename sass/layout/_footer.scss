@@ -2,9 +2,10 @@
 
 .footer-pane {
     background: $bg--gray;
+    padding: 2.4em;
 
     .footer-link {
-        padding: 2.4em;
+        padding: 0 1.5em;
 
         &.copyright {
             color: $dark-gray;
