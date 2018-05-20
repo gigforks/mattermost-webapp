@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 
 import {Preferences} from 'utils/constants.jsx';
-import ThreeFoldLogo from 'components/svg/mattermost_logo';
+import ThreeFoldLogo from 'components/svg/threefold_logo';
 
 export default class SystemNotice extends React.PureComponent {
     static propTypes = {

@@ -12,7 +12,7 @@ import * as Utils from 'utils/utils.jsx';
 import PostBody from 'components/post_view/post_body';
 import PostHeader from 'components/post_view/post_header';
 import ProfilePicture from 'components/profile_picture.jsx';
-import ThreeFoldLogo from 'components/svg/mattermost_logo';
+import ThreeFoldLogo from 'components/svg/threefold_logo';
 
 export default class Post extends React.PureComponent {
     static propTypes = {

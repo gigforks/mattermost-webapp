@@ -23,7 +23,7 @@ import ReactionListContainer from 'components/post_view/reaction_list';
 import PostTime from 'components/post_view/post_time.jsx';
 import ProfilePicture from 'components/profile_picture.jsx';
 import EmojiIcon from 'components/svg/emoji_icon';
-import ThreeFoldLogo from 'components/svg/mattermost_logo';
+import ThreeFoldLogo from 'components/svg/threefold_logo';
 import ChannelPermissionGate from 'components/permissions_gates/channel_permission_gate';
 import MessageWithAdditionalContent from 'components/message_with_additional_content';
 
