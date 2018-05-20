@@ -38,8 +38,8 @@ const style = {
     background: {
         enableBackground: 'new 0 0 566.9 566.9',
     },
-    .st0{ fill: #C6C9CD; },
-    .st1{ fill: #FFFFFF; },
-    .st2{ fill: #698FC9; },
-    .st3{ fill: #7DA783; },
+    st0: { fill: '#C6C9CD' },
+    st1: { fill: '#FFFFFF' },
+    st2: { fill: '#698FC9' },
+    st3: { fill: '#7DA783' },
 };
