@@ -102,6 +102,9 @@ export default class NotLoggedIn extends React.PureComponent {
                             <span className='pull-right footer-link copyright'>
                                 {`© 2018 ThreeFoldToken, Inc.`}
                             </span>
+                            <span className='pull-right'>
+                                {content}
+                            </span>
                         </div>
                     </div>
                 </div>
