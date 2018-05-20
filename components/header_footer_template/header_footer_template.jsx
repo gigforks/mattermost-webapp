@@ -99,11 +99,8 @@ export default class NotLoggedIn extends React.PureComponent {
                 <div className='row footer'>
                     <div className='footer-pane col-xs-12'>
                         <div className='col-xs-12'>
-                            <span className='pull-right footer-site-name'>{'TF Chat'}</span>
-                        </div>
-                        <div className='col-xs-12'>
                             <span className='pull-right footer-link copyright'>
-                                {`© 2015-${new Date().getFullYear()} ThreeFoldToken, Inc.`}
+                                {`© ${new Date().getFullYear()} ThreeFoldToken, Inc.`}
                             </span>
                             <span className='pull-right'>
                                 {content}
