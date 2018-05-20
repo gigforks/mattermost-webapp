@@ -38,6 +38,7 @@ export default class SiteNameAndDescription extends React.PureComponent {
         return (
             <React.Fragment>
                 <h1>{siteName}</h1>
+                <span>TF Chat</span>
                 <h4 className='color--light'>
                     {description}
                 </h4>
