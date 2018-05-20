@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 /* eslint-disable no-magic-numbers */
@@ -696,8 +696,8 @@ export const Constants = {
             codeTheme: 'github',
             image: defaultThemeImage,
         },
-        ZeroChatDark: {
-            type: 'ZeroChat Dark',
+        TF ChatDark: {
+            type: 'TF Chat Dark',
             sidebarBg: '#1b2c3e',
             sidebarText: '#ffffff',
             sidebarUnreadText: '#ffffff',

@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -541,7 +541,7 @@ export default class SystemUsersDropdown extends React.Component {
                 <div>
                     <FormattedMessage
                         id='admin.user_item.confirmDemoteDescription'
-                        defaultMessage="If you demote yourself from the System Admin role and there is not another user with System Admin privileges, you'll need to re-assign a System Admin by accessing the ZeroChat server through a terminal and running the following command."
+                        defaultMessage="If you demote yourself from the System Admin role and there is not another user with System Admin privileges, you'll need to re-assign a System Admin by accessing the TF Chat server through a terminal and running the following command."
                     />
                     <br/>
                     <br/>

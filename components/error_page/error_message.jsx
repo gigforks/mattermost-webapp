@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -18,7 +18,7 @@ export default function ErrorMessage({type, message, service}) {
                 <div>
                     <FormattedMessage
                         id='error.local_storage.message'
-                        defaultMessage='ZeroChat was unable to load because a setting in your browser prevents the use of its local storage features. To allow ZeroChat to load, try the following actions:'
+                        defaultMessage='TF Chat was unable to load because a setting in your browser prevents the use of its local storage features. To allow TF Chat to load, try the following actions:'
                     />
                     <ul>
                         <li>
@@ -83,7 +83,7 @@ export default function ErrorMessage({type, message, service}) {
                     <p>
                         <FormattedMessage
                             id='error.oauth_missing_code.office365'
-                            defaultMessage='For {link} make sure the administrator of your Microsoft organization has enabled the ZeroChat app.'
+                            defaultMessage='For {link} make sure the administrator of your Microsoft organization has enabled the TF Chat app.'
                             values={{
                                 link: (
                                     <ErrorLink

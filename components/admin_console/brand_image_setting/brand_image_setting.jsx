@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import $ from 'jquery';
@@ -190,7 +190,7 @@ export default class BrandImageSetting extends React.PureComponent {
                     <p className='help-text no-margin'>
                         <FormattedHTMLMessage
                             id='admin.team.uploadDesc'
-                            defaultMessage='Customize your user experience by adding a custom image to your login screen. See examples at <a href="/" target="_blank">ZeroChat#custom-branding</a>.'
+                            defaultMessage='Customize your user experience by adding a custom image to your login screen. See examples at <a href="/" target="_blank">TF Chat#custom-branding</a>.'
                         />
                     </p>
                 </div>

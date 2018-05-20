@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -14,7 +14,7 @@ export default class SiteNameAndDescription extends React.PureComponent {
 
     static defaultProps = {
         isLicensed: false,
-        siteName: 'ZeroChat',
+        siteName: 'TF Chat',
     };
 
     render() {

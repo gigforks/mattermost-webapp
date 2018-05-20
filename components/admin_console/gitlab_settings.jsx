@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -90,7 +90,7 @@ export default class GitLabSettings extends AdminSettings {
                         <div>
                             <FormattedMessage
                                 id='admin.gitlab.enableDescription'
-                                defaultMessage='When true, ZeroChat allows team creation and account signup using GitLab OAuth.'
+                                defaultMessage='When true, TF Chat allows team creation and account signup using GitLab OAuth.'
                             />
                             <br/>
                             <FormattedHTMLMessage

@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -62,7 +62,7 @@ export default class ConfirmIntegration extends React.Component {
                     <p>
                         <FormattedHTMLMessage
                             id='add_command.doneHelp'
-                            defaultMessage='Your slash command has been set up. The following token will be sent in the outgoing payload. Please use it to verify the request came from your ZeroChat team (see <a href="/">documentation</a> for further details).'
+                            defaultMessage='Your slash command has been set up. The following token will be sent in the outgoing payload. Please use it to verify the request came from your TF Chat team (see <a href="/">documentation</a> for further details).'
                         />
                     </p>
                 );
@@ -120,7 +120,7 @@ export default class ConfirmIntegration extends React.Component {
                     <p>
                         <FormattedHTMLMessage
                             id='add_outgoing_webhook.doneHelp'
-                            defaultMessage='Your outgoing webhook has been set up. The following token will be sent in the outgoing payload. Please use it to verify the request came from your ZeroChat team (see <a href=\"/\">documentation</a> for further details).'
+                            defaultMessage='Your outgoing webhook has been set up. The following token will be sent in the outgoing payload. Please use it to verify the request came from your TF Chat team (see <a href=\"/\">documentation</a> for further details).'
                         />
                     </p>
                 );

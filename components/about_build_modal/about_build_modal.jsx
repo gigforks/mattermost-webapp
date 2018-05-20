@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -72,7 +72,7 @@ export default class AboutBuildModal extends React.PureComponent {
             <div>
                 <FormattedMessage
                     id='about.teamEditionLearn'
-                    defaultMessage='Join the ZeroChat community at '
+                    defaultMessage='Join the TF Chat community at '
                 />
                 <a
                     target='_blank'
@@ -164,7 +164,7 @@ export default class AboutBuildModal extends React.PureComponent {
                     <Modal.Title>
                         <FormattedMessage
                             id='about.title'
-                            defaultMessage='About ZeroChat'
+                            defaultMessage='About TF Chat'
                         />
                     </Modal.Title>
                 </Modal.Header>
@@ -174,13 +174,13 @@ export default class AboutBuildModal extends React.PureComponent {
                             <ThreeFoldLogo/>
                         </div>
                         <div>
-                            <h3 className='about-modal__title'>{'ZeroChat'} {title}</h3>
+                            <h3 className='about-modal__title'>{'TF Chat'} {title}</h3>
                             <p className='about-modal__subtitle padding-bottom'>{subTitle}</p>
                             <div className='form-group less'>
                                 <div>
                                     <FormattedMessage
                                         id='about.version'
-                                        defaultMessage='ZeroChat Version:'
+                                        defaultMessage='TF Chat Version:'
                                     />
                                     <span id='versionString'>{'\u00a0' + mmversion}</span>
                                 </div>
@@ -208,7 +208,7 @@ export default class AboutBuildModal extends React.PureComponent {
                         <div className='form-group about-modal__copyright'>
                             <FormattedMessage
                                 id='about.copyright'
-                                defaultMessage='Copyright 2015 - {currentYear} ZeroChat, Inc. All rights reserved'
+                                defaultMessage='Copyright 2015 - {currentYear} TF Chat, Inc. All rights reserved'
                                 values={{
                                     currentYear: new Date().getFullYear(),
                                 }}
@@ -219,7 +219,7 @@ export default class AboutBuildModal extends React.PureComponent {
                         <p>
                             <FormattedHTMLMessage
                                 id='about.notice'
-                                defaultMessage='ZeroChat is made possible by the open source software used in our <a href="https://threefoldtoken.com" target="_blank">platform</a>'
+                                defaultMessage='TF Chat is made possible by the open source software used in our <a href="https://threefoldtoken.com" target="_blank">platform</a>'
                             />
                         </p>
                     </div>

@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import assert from 'assert';
@@ -184,8 +184,8 @@ describe('TextFormatting.Hashtags', function() {
         );
 
         assert.equal(
-            TextFormatting.formatText('#:zerochat:').trim(),
-            '<p>#<span data-emoticon="zerochat">:zerochat:</span></p>'
+            TextFormatting.formatText('#:tfchat:').trim(),
+            '<p>#<span data-emoticon="tfchat">:tfchat:</span></p>'
         );
 
         assert.equal(

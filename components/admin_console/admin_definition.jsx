@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -146,7 +146,7 @@ export default {
                             label: 'admin.service.siteURL',
                             label_default: 'Site URL:',
                             help_text: 'admin.service.siteURLDescription',
-                            help_text_default: 'The URL that users will use to access ZeroChat. Standard ports, such as 80 and 443, can be omitted, but non-standard ports are required. For example: http://threefoldtoken.example.com:8065. This setting is required.',
+                            help_text_default: 'The URL that users will use to access TF Chat. Standard ports, such as 80 and 443, can be omitted, but non-standard ports are required. For example: http://threefoldtoken.example.com:8065. This setting is required.',
                             placeholder: 'admin.service.siteURLExample',
                             placeholder_default: 'E.g.: "https://threefoldtoken.example.com:1234"',
                         },
@@ -158,7 +158,7 @@ export default {
                             placeholder: 'admin.service.listenExample',
                             placeholder_default: 'E.g.: ":8065"',
                             help_text: 'admin.service.listenDescription',
-                            help_text_default: 'The address and port to which to bind and listen. Specifying ":8065" will bind to all network interfaces. Specifying "127.0.0.1:8065" will only bind to the network interface having that IP address. If you choose a port of a lower level (called "system ports" or "well-known ports", in the range of 0-1023), you must have permissions to bind to that port. On Linux you can use: "sudo setcap cap_net_bind_service=+ep ./bin/platform" to allow ZeroChat to bind to well-known ports.',
+                            help_text_default: 'The address and port to which to bind and listen. Specifying ":8065" will bind to all network interfaces. Specifying "127.0.0.1:8065" will only bind to the network interface having that IP address. If you choose a port of a lower level (called "system ports" or "well-known ports", in the range of 0-1023), you must have permissions to bind to that port. On Linux you can use: "sudo setcap cap_net_bind_service=+ep ./bin/platform" to allow TF Chat to bind to well-known ports.',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_BOOL,
@@ -286,7 +286,7 @@ export default {
                             label: 'admin.reload.button',
                             label_default: 'Reload Configuration From Disk',
                             help_text: 'admin.reload.reloadDescription',
-                            help_text_default: 'Deployments using multiple databases can switch from one master database to another without restarting the ZeroChat server by updating "config.json" to the new desired configuration and using the {featureName} feature to load the new settings while the server is running. The administrator should then use the {recycleDatabaseConnections} feature to recycle the database connections based on the new settings.',
+                            help_text_default: 'Deployments using multiple databases can switch from one master database to another without restarting the TF Chat server by updating "config.json" to the new desired configuration and using the {featureName} feature to load the new settings while the server is running. The administrator should then use the {recycleDatabaseConnections} feature to recycle the database connections based on the new settings.',
                             help_text_values: {
                                 featureName: (
                                     <b>
@@ -353,7 +353,7 @@ export default {
                             label_default: 'Available Languages:',
                             help_text: 'admin.general.localization.availableLocalesDescription',
                             help_text_html: true,
-                            help_text_default: 'Set which languages are available for users in Account Settings (leave this field blank to have all supported languages available). If you\'re manually adding new languages, the <strong>Default Client Language</strong> must be added before saving this setting.<br /><br />Would like to help with translations? Join the <a href="http://threefoldtoken.com/" target="_blank">ZeroChat Translation Server</a> to contribute.',
+                            help_text_default: 'Set which languages are available for users in Account Settings (leave this field blank to have all supported languages available). If you\'re manually adding new languages, the <strong>Default Client Language</strong> must be added before saving this setting.<br /><br />Would like to help with translations? Join the <a href="http://threefoldtoken.com/" target="_blank">TF Chat Translation Server</a> to contribute.',
                             multiple: true,
                             no_result: 'admin.general.localization.availableLocalesNoResults',
                             no_result_default: 'No results found',
@@ -407,7 +407,7 @@ export default {
                             label: 'admin.compliance.enableTitle',
                             label_default: 'Enable Compliance Reporting:',
                             help_text: 'admin.compliance.enableDesc',
-                            help_text_default: 'When true, ZeroChat allows compliance reporting from the <strong>Compliance and Auditing</strong> tab. See <a href="https://threefoldtoken.com" target="_blank">documentation</a> to learn more.',
+                            help_text_default: 'When true, TF Chat allows compliance reporting from the <strong>Compliance and Auditing</strong> tab. See <a href="https://threefoldtoken.com" target="_blank">documentation</a> to learn more.',
                             help_text_html: true,
                             isHidden: needsUtils.not(needsUtils.hasLicense),
                         },
@@ -429,7 +429,7 @@ export default {
                             label: 'admin.compliance.enableDailyTitle',
                             label_default: 'Enable Daily Report:',
                             help_text: 'admin.compliance.enableDailyDesc',
-                            help_text_default: 'When true, ZeroChat will generate a daily compliance report.',
+                            help_text_default: 'When true, TF Chat will generate a daily compliance report.',
                             isDisabled: needsUtils.stateValueFalse('ComplianceSettings.Enable'),
                             isHidden: needsUtils.not(needsUtils.hasLicense),
                         },
@@ -475,7 +475,7 @@ export default {
                             label: 'admin.log.fileTitle',
                             label_default: 'Output logs to file: ',
                             help_text: 'admin.log.fileDescription',
-                            help_text_default: 'Typically set to true in production. When true, logged events are written to the ZeroChat.log file in the directory specified in the File Log Directory field. The logs are rotated at 10,000 lines and archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ZeroChat.2017-03-31.001. Changing this setting requires a server restart before taking effect.',
+                            help_text_default: 'Typically set to true in production. When true, logged events are written to the TF Chat.log file in the directory specified in the File Log Directory field. The logs are rotated at 10,000 lines and archived to a file in the same directory, and given a name with a datestamp and serial number. For example, TF Chat.2017-03-31.001. Changing this setting requires a server restart before taking effect.',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_DROPDOWN,
@@ -502,7 +502,7 @@ export default {
                             label: 'admin.log.locationTitle',
                             label_default: 'File Log Directory:',
                             help_text: 'admin.log.locationDescription',
-                            help_text_default: 'The location of the log files. If blank, they are stored in the ./logs directory. The path that you set must exist and ZeroChat must have write permissions in it. Changing this setting requires a server restart before taking effect.',
+                            help_text_default: 'The location of the log files. If blank, they are stored in the ./logs directory. The path that you set must exist and TF Chat must have write permissions in it. Changing this setting requires a server restart before taking effect.',
                             placeholder: 'admin.log.locationPlaceholder',
                             placeholder_default: 'Enter your file location',
                             isDisabled: needsUtils.stateValueFalse('LogSettings.EnableFile'),
@@ -531,7 +531,7 @@ export default {
                             label: 'admin.log.enableDiagnostics',
                             label_default: 'Enable Diagnostics and Error Reporting:',
                             help_text: 'admin.log.enableDiagnosticsDescription',
-                            help_text_default: 'Enable this feature to improve the quality and performance of ZeroChat by sending error reporting and diagnostic information to ZeroChat, Inc. Read our <a href="https://threefoldtoken.com/privacy-policy/" target="_blank">privacy policy</a> to learn more.',
+                            help_text_default: 'Enable this feature to improve the quality and performance of TF Chat by sending error reporting and diagnostic information to TF Chat, Inc. Read our <a href="https://threefoldtoken.com/privacy-policy/" target="_blank">privacy policy</a> to learn more.',
                             help_text_html: true,
                         },
                     ],
@@ -551,7 +551,7 @@ export default {
                             label: 'admin.email.allowSignupTitle',
                             label_default: 'Enable account creation with email:',
                             help_text: 'admin.email.allowSignupDescription',
-                            help_text_default: 'When true, ZeroChat allows account creation using email and password. This value should be false only when you want to limit sign up to a single sign-on service like AD/LDAP, SAML or GitLab.',
+                            help_text_default: 'When true, TF Chat allows account creation using email and password. This value should be false only when you want to limit sign up to a single sign-on service like AD/LDAP, SAML or GitLab.',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_BOOL,
@@ -559,7 +559,7 @@ export default {
                             label: 'admin.email.allowEmailSignInTitle',
                             label_default: 'Enable sign-in with email:',
                             help_text: 'admin.email.allowEmailSignInDescription',
-                            help_text_default: 'When true, ZeroChat allows users to sign in using their email and password.',
+                            help_text_default: 'When true, TF Chat allows users to sign in using their email and password.',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_BOOL,
@@ -584,7 +584,7 @@ export default {
                             label: 'admin.ldap.enableTitle',
                             label_default: 'Enable sign-in with AD/LDAP:',
                             help_text: 'admin.ldap.enableDesc',
-                            help_text_default: 'When true, ZeroChat allows login using AD/LDAP',
+                            help_text_default: 'When true, TF Chat allows login using AD/LDAP',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_BOOL,
@@ -592,7 +592,7 @@ export default {
                             label: 'admin.ldap.enableSyncTitle',
                             label_default: 'Enable Synchronization with AD/LDAP:',
                             help_text: 'admin.ldap.enableSyncDesc',
-                            help_text_default: 'When true, ZeroChat periodically synchronizes users from AD/LDAP. When false, user attributes are updated from AD/LDAP during user login only.',
+                            help_text_default: 'When true, TF Chat periodically synchronizes users from AD/LDAP. When false, user attributes are updated from AD/LDAP during user login only.',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_TEXT,
@@ -614,7 +614,7 @@ export default {
                             label: 'admin.ldap.portTitle',
                             label_default: 'AD/LDAP Port:',
                             help_text: 'admin.ldap.portDesc',
-                            help_text_default: 'The port ZeroChat will use to connect to the AD/LDAP server. Default is 389.',
+                            help_text_default: 'The port TF Chat will use to connect to the AD/LDAP server. Default is 389.',
                             placeholder: 'admin.ldap.portEx',
                             placeholder_default: 'E.g.: "389"',
                             isDisabled: needsUtils.and(
@@ -665,7 +665,7 @@ export default {
                             label: 'admin.ldap.baseTitle',
                             label_default: 'BaseDN:',
                             help_text: 'admin.ldap.baseDesc',
-                            help_text_default: 'The Base DN is the Distinguished Name of the location where ZeroChat should start its search for users in the AD/LDAP tree.',
+                            help_text_default: 'The Base DN is the Distinguished Name of the location where TF Chat should start its search for users in the AD/LDAP tree.',
                             placeholder: 'admin.ldap.baseEx',
                             placeholder_default: 'E.g.: "ou=Unit Name,dc=corp,dc=example,dc=com"',
                             isDisabled: needsUtils.and(
@@ -679,7 +679,7 @@ export default {
                             label: 'admin.ldap.bindUserTitle',
                             label_default: 'Bind Username:',
                             help_text: 'admin.ldap.bindUserDesc',
-                            help_text_default: 'The username used to perform the AD/LDAP search. This should typically be an account created specifically for use with ZeroChat. It should have access limited to read the portion of the AD/LDAP tree specified in the BaseDN field.',
+                            help_text_default: 'The username used to perform the AD/LDAP search. This should typically be an account created specifically for use with TF Chat. It should have access limited to read the portion of the AD/LDAP tree specified in the BaseDN field.',
                             isDisabled: needsUtils.and(
                                 needsUtils.stateValueFalse('LdapSettings.Enable'),
                                 needsUtils.stateValueFalse('LdapSettings.EnableSync'),
@@ -703,7 +703,7 @@ export default {
                             label: 'admin.ldap.userFilterTitle',
                             label_default: 'User Filter:',
                             help_text: 'admin.ldap.userFilterDisc',
-                            help_text_default: '(Optional) Enter an AD/LDAP Filter to use when searching for user objects. Only the users selected by the query will be able to access ZeroChat. For Active Directory, the query to filter out disabled users is (&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))).',
+                            help_text_default: '(Optional) Enter an AD/LDAP Filter to use when searching for user objects. Only the users selected by the query will be able to access TF Chat. For Active Directory, the query to filter out disabled users is (&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))).',
                             placeholder: 'admin.ldap.userFilterEx',
                             placeholder_default: 'Ex. "(objectClass=user)"',
                             isDisabled: needsUtils.and(
@@ -719,7 +719,7 @@ export default {
                             placeholder: 'admin.ldap.firstnameAttrEx',
                             placeholder_default: 'E.g.: "givenName"',
                             help_text: 'admin.ldap.firstnameAttrDesc',
-                            help_text_default: '(Optional) The attribute in the AD/LDAP server that will be used to populate the first name of users in ZeroChat.  When set, users will not be able to edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their own first name in Account Settings.',
+                            help_text_default: '(Optional) The attribute in the AD/LDAP server that will be used to populate the first name of users in TF Chat.  When set, users will not be able to edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their own first name in Account Settings.',
                             isDisabled: needsUtils.and(
                                 needsUtils.stateValueFalse('LdapSettings.Enable'),
                                 needsUtils.stateValueFalse('LdapSettings.EnableSync'),
@@ -733,7 +733,7 @@ export default {
                             placeholder: 'admin.ldap.lastnameAttrEx',
                             placeholder_default: 'E.g.: "sn"',
                             help_text: 'admin.ldap.lastnameAttrDesc',
-                            help_text_default: '(Optional) The attribute in the AD/LDAP server that will be used to populate the last name of users in ZeroChat. When set, users will not be able to edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their own last name in Account Settings.',
+                            help_text_default: '(Optional) The attribute in the AD/LDAP server that will be used to populate the last name of users in TF Chat. When set, users will not be able to edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their own last name in Account Settings.',
                             isDisabled: needsUtils.and(
                                 needsUtils.stateValueFalse('LdapSettings.Enable'),
                                 needsUtils.stateValueFalse('LdapSettings.EnableSync'),
@@ -747,7 +747,7 @@ export default {
                             placeholder: 'admin.ldap.nicknameAttrEx',
                             placeholder_default: 'E.g.: "nickname"',
                             help_text: 'admin.ldap.nicknameAttrDesc',
-                            help_text_default: '(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in ZeroChat. When set, users will not be able to edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their own nickname in Account Settings.',
+                            help_text_default: '(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in TF Chat. When set, users will not be able to edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their own nickname in Account Settings.',
                             isDisabled: needsUtils.and(
                                 needsUtils.stateValueFalse('LdapSettings.Enable'),
                                 needsUtils.stateValueFalse('LdapSettings.EnableSync'),
@@ -761,7 +761,7 @@ export default {
                             placeholder: 'admin.ldap.positionAttrEx',
                             placeholder_default: 'E.g.: "title"',
                             help_text: 'admin.ldap.positionAttrDesc',
-                            help_text_default: '(Optional) The attribute in the AD/LDAP server that will be used to populate the position field in ZeroChat.',
+                            help_text_default: '(Optional) The attribute in the AD/LDAP server that will be used to populate the position field in TF Chat.',
                             isDisabled: needsUtils.and(
                                 needsUtils.stateValueFalse('LdapSettings.Enable'),
                                 needsUtils.stateValueFalse('LdapSettings.EnableSync'),
@@ -775,7 +775,7 @@ export default {
                             placeholder: 'admin.ldap.emailAttrEx',
                             placeholder_default: 'E.g.: "mail" or "userPrincipalName"',
                             help_text: 'admin.ldap.emailAttrDesc',
-                            help_text_default: 'The attribute in the AD/LDAP server that will be used to populate the email addresses of users in ZeroChat.',
+                            help_text_default: 'The attribute in the AD/LDAP server that will be used to populate the email addresses of users in TF Chat.',
                             isDisabled: needsUtils.and(
                                 needsUtils.stateValueFalse('LdapSettings.Enable'),
                                 needsUtils.stateValueFalse('LdapSettings.EnableSync'),
@@ -789,7 +789,7 @@ export default {
                             placeholder: 'admin.ldap.usernameAttrEx',
                             placeholder_default: 'E.g.: "sAMAccountName"',
                             help_text: 'admin.ldap.uernameAttrDesc',
-                            help_text_default: 'The attribute in the AD/LDAP server that will be used to populate the username field in ZeroChat. This may be the same as the ID Attribute.',
+                            help_text_default: 'The attribute in the AD/LDAP server that will be used to populate the username field in TF Chat. This may be the same as the ID Attribute.',
                             isDisabled: needsUtils.and(
                                 needsUtils.stateValueFalse('LdapSettings.Enable'),
                                 needsUtils.stateValueFalse('LdapSettings.EnableSync'),
@@ -803,7 +803,7 @@ export default {
                             placeholder: 'admin.ldap.idAttrEx',
                             placeholder_default: 'E.g.: "sAMAccountName"',
                             help_text: 'admin.ldap.idAttrDesc',
-                            help_text_default: 'The attribute in the AD/LDAP server that will be used as a unique identifier in ZeroChat. It should be an AD/LDAP attribute with a value that does not change, such as username or uid. If a user\'s ID Attribute changes, it will create a new ZeroChat account unassociated with their old one. This is the value used to log in to ZeroChat in the "AD/LDAP Username" field on the sign in page. Normally this attribute is the same as the "Username Attribute" field above. If your team typically uses domain\\username to sign in to other services with AD/LDAP, you may choose to put domain\\username in this field to maintain consistency between sites.',
+                            help_text_default: 'The attribute in the AD/LDAP server that will be used as a unique identifier in TF Chat. It should be an AD/LDAP attribute with a value that does not change, such as username or uid. If a user\'s ID Attribute changes, it will create a new TF Chat account unassociated with their old one. This is the value used to log in to TF Chat in the "AD/LDAP Username" field on the sign in page. Normally this attribute is the same as the "Username Attribute" field above. If your team typically uses domain\\username to sign in to other services with AD/LDAP, you may choose to put domain\\username in this field to maintain consistency between sites.',
                             isDisabled: needsUtils.and(
                                 needsUtils.stateValueFalse('LdapSettings.Enable'),
                                 needsUtils.stateValueFalse('LdapSettings.EnableSync'),
@@ -829,7 +829,7 @@ export default {
                             label: 'admin.ldap.syncIntervalTitle',
                             label_default: 'Synchronization Interval (minutes):',
                             help_text: 'admin.ldap.syncIntervalHelpText',
-                            help_text_default: 'AD/LDAP Synchronization updates ZeroChat user information to reflect updates on the AD/LDAP server. For example, when a user\'s name changes on the AD/LDAP server, the change updates in ZeroChat when synchronization is performed. Accounts removed from or disabled in the AD/LDAP server have their ZeroChat accounts set to "Inactive" and have their account sessions revoked. ZeroChat performs synchronization on the interval entered. For example, if 60 is entered, ZeroChat synchronizes every 60 minutes.',
+                            help_text_default: 'AD/LDAP Synchronization updates TF Chat user information to reflect updates on the AD/LDAP server. For example, when a user\'s name changes on the AD/LDAP server, the change updates in TF Chat when synchronization is performed. Accounts removed from or disabled in the AD/LDAP server have their TF Chat accounts set to "Inactive" and have their account sessions revoked. TF Chat performs synchronization on the interval entered. For example, if 60 is entered, TF Chat synchronizes every 60 minutes.',
                             isDisabled: needsUtils.and(
                                 needsUtils.stateValueFalse('LdapSettings.Enable'),
                                 needsUtils.stateValueFalse('LdapSettings.EnableSync'),
@@ -843,7 +843,7 @@ export default {
                             placeholder: 'admin.ldap.maxPageSizeEx',
                             placeholder_default: 'E.g.: "2000"',
                             help_text: 'admin.ldap.maxPageSizeHelpText',
-                            help_text_default: 'The maximum number of users the ZeroChat server will request from the AD/LDAP server at one time. 0 is unlimited.',
+                            help_text_default: 'The maximum number of users the TF Chat server will request from the AD/LDAP server at one time. 0 is unlimited.',
                             isDisabled: needsUtils.and(
                                 needsUtils.stateValueFalse('LdapSettings.Enable'),
                                 needsUtils.stateValueFalse('LdapSettings.EnableSync'),
@@ -870,7 +870,7 @@ export default {
                             label: 'admin.ldap.ldap_test_button',
                             label_default: 'AD/LDAP Test',
                             help_text: 'admin.ldap.testHelpText',
-                            help_text_default: 'Tests if the ZeroChat server can connect to the AD/LDAP server specified. See log file for more detailed error messages.',
+                            help_text_default: 'Tests if the TF Chat server can connect to the AD/LDAP server specified. See log file for more detailed error messages.',
                             error_message: 'admin.ldap.testFailure',
                             error_message_default: 'AD/LDAP Test Failure: {error}',
                             success_message: 'admin.ldap.testSuccess',
@@ -957,7 +957,7 @@ export default {
                             label_default: 'Enforce Multi-factor Authentication:',
                             help_text: 'admin.service.enforceMfaDesc',
                             help_text_html: true,
-                            help_text_default: 'When true, <a href=\'https://threefoldtoken.com\' target=\'_blank\'>multi-factor authentication</a> is required for login. New users will be required to configure MFA on signup. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete.<br/><br/>If your system has users with login methods other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of ZeroChat.',
+                            help_text_default: 'When true, <a href=\'https://threefoldtoken.com\' target=\'_blank\'>multi-factor authentication</a> is required for login. New users will be required to configure MFA on signup. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete.<br/><br/>If your system has users with login methods other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of TF Chat.',
                             isDisabled: needsUtils.stateValueFalse('ServiceSettings.EnableMultifactorAuthentication'),
                         },
                     ],
@@ -977,7 +977,7 @@ export default {
                             label: 'admin.email.requireVerificationTitle',
                             label_default: 'Require Email Verification: ',
                             help_text: 'admin.email.requireVerificationDescription',
-                            help_text_default: 'Typically set to true in production. When true, ZeroChat requires email verification after account creation prior to allowing login. Developers may set this field to false to skip sending verification emails for faster development.',
+                            help_text_default: 'Typically set to true in production. When true, TF Chat requires email verification after account creation prior to allowing login. Developers may set this field to false to skip sending verification emails for faster development.',
                             disabled_help_text: 'admin.security.requireEmailVerification.disabled',
                             disabled_help_text_default: 'Email verification cannot be changed while sending emails is disabled.',
                             isDisabled: (config) => !config.EmailSettings.SendEmailNotifications,
@@ -1064,15 +1064,15 @@ export default {
                 schema: {
                     id: 'WebrtcSettings',
                     name: 'admin.integrations.webrtc',
-                    name_default: 'ZeroChat WebRTC (Beta)',
+                    name_default: 'TF Chat WebRTC (Beta)',
                     settings: [
                         {
                             type: Constants.SettingsTypes.TYPE_BOOL,
                             key: 'WebrtcSettings.Enable',
                             label: 'admin.webrtc.enableTitle',
-                            label_default: 'Enable ZeroChat WebRTC: ',
+                            label_default: 'Enable TF Chat WebRTC: ',
                             help_text: 'admin.webrtc.enableDescription',
-                            help_text_default: 'When true, ZeroChat allows making <strong>one-on-one</strong> video calls. WebRTC calls are available on Chrome, Firefox and ZeroChat Desktop Apps.',
+                            help_text_default: 'When true, TF Chat allows making <strong>one-on-one</strong> video calls. WebRTC calls are available on Chrome, Firefox and TF Chat Desktop Apps.',
                             help_text_html: true,
                         },
                         {
@@ -1081,9 +1081,9 @@ export default {
                             label: 'admin.webrtc.gatewayWebsocketUrlTitle',
                             label_default: 'Gateway WebSocket URL:',
                             placeholder: 'admin.webrtc.gatewayWebsocketUrlExample',
-                            placeholder_default: 'E.g.: "wss://webrtc.zerochat.com:8189"',
+                            placeholder_default: 'E.g.: "wss://webrtc.tfchat.com:8189"',
                             help_text: 'admin.webrtc.gatewayWebsocketUrlDescription',
-                            help_text_default: 'Enter wss://<zerochat-webrtc-gateway-url>:<port>. Make sure you use WS or WSS in your URL depending on your server configuration.\n' +
+                            help_text_default: 'Enter wss://<tfchat-webrtc-gateway-url>:<port>. Make sure you use WS or WSS in your URL depending on your server configuration.\n' +
                                 'This is the WebSocket used to signal and establish communication between the peers.',
                             isDisabled: needsUtils.stateValueFalse('WebrtcSettings.Enable'),
                         },
@@ -1093,10 +1093,10 @@ export default {
                             label: 'admin.webrtc.gatewayAdminUrlTitle',
                             label_default: 'Gateway Admin URL:',
                             placeholder: 'admin.webrtc.gatewayAdminUrlExample',
-                            placeholder_default: 'E.g.: "https://webrtc.zerochat.com:7089/admin"',
+                            placeholder_default: 'E.g.: "https://webrtc.tfchat.com:7089/admin"',
                             help_text: 'admin.webrtc.gatewayAdminUrlDescription',
-                            help_text_default: 'Enter https://<zerochat-webrtc-gateway-url>:<port>/admin. Make sure you use HTTP or HTTPS in your URL depending on your server configuration.\n' +
-                                'ZeroChat WebRTC uses this URL to obtain valid tokens for each peer to establish the connection.',
+                            help_text_default: 'Enter https://<tfchat-webrtc-gateway-url>:<port>/admin. Make sure you use HTTP or HTTPS in your URL depending on your server configuration.\n' +
+                                'TF Chat WebRTC uses this URL to obtain valid tokens for each peer to establish the connection.',
                             isDisabled: needsUtils.stateValueFalse('WebrtcSettings.Enable'),
                         },
                         {
@@ -1116,7 +1116,7 @@ export default {
                             label: 'admin.webrtc.stunUriTitle',
                             label_default: 'STUN URI:',
                             placeholder: 'admin.webrtc.stunUriExample',
-                            placeholder_default: 'E.g.: "stun:webrtc.zerochat.com:5349"',
+                            placeholder_default: 'E.g.: "stun:webrtc.tfchat.com:5349"',
                             help_text: 'admin.webrtc.stunUriDescription',
                             help_text_default: 'Enter your STUN URI as stun:<your-stun-url>:<port>. STUN is a standardized network protocol to allow an end host to assist devices to access its public IP address if it is located behind a NAT.',
                             isDisabled: needsUtils.stateValueFalse('WebrtcSettings.Enable'),
@@ -1127,7 +1127,7 @@ export default {
                             label: 'admin.webrtc.turnUriTitle',
                             label_default: 'TURN URI:',
                             placeholder: 'admin.webrtc.turnUriExample',
-                            placeholder_default: 'E.g.: "turn:webrtc.zerochat.com:5349"',
+                            placeholder_default: 'E.g.: "turn:webrtc.tfchat.com:5349"',
                             help_text: 'admin.webrtc.turnUriDescription',
                             help_text_default: 'Enter your TURN URI as turn:<your-turn-url>:<port>. TURN is a standardized network protocol to allow an end host to assist devices to establish a connection by using a relay public IP address if it is located behind a symmetric NAT.',
                             isDisabled: needsUtils.stateValueFalse('WebrtcSettings.Enable'),
@@ -1197,7 +1197,7 @@ export default {
                             label: 'admin.plugins.settings.enable',
                             label_default: 'Enable Plugins: ',
                             help_text: 'admin.plugins.settings.enableDesc',
-                            help_text_default: 'When true, enables plugins on your ZeroChat server. Use plugins to integrate with third-party systems, extend functionality or customize the user interface of your ZeroChat server. See <a href="/" target="_blank">documentation</a> to learn more.',
+                            help_text_default: 'When true, enables plugins on your TF Chat server. Use plugins to integrate with third-party systems, extend functionality or customize the user interface of your TF Chat server. See <a href="/" target="_blank">documentation</a> to learn more.',
                             help_text_html: true,
                         },
                     ],
@@ -1251,7 +1251,7 @@ export default {
                             help_text: 'admin.image.amazonS3BucketDescription',
                             help_text_default: 'Name you selected for your S3 bucket in AWS.',
                             placeholder: 'admin.image.amazonS3BucketExample',
-                            placeholder_default: 'E.g.: "zerochat-media"',
+                            placeholder_default: 'E.g.: "tfchat-media"',
                             isDisabled: needsUtils.not(needsUtils.stateValueEqual('FileSettings.DriverName', FILE_STORAGE_DRIVER_S3)),
                         },
                         {
@@ -1260,7 +1260,7 @@ export default {
                             label: 'admin.image.amazonS3RegionTitle',
                             label_default: 'Amazon S3 Region:',
                             help_text: 'admin.image.amazonS3RegionDescription',
-                            help_text_default: 'AWS region you selected when creating your S3 bucket. If no region is set, ZeroChat attempts to get the appropriate region from AWS, or sets it to "us-east-1" if none found.',
+                            help_text_default: 'AWS region you selected when creating your S3 bucket. If no region is set, TF Chat attempts to get the appropriate region from AWS, or sets it to "us-east-1" if none found.',
                             placeholder: 'admin.image.amazonS3RegionExample',
                             placeholder_default: 'E.g.: "us-east-1"',
                             isDisabled: needsUtils.not(needsUtils.stateValueEqual('FileSettings.DriverName', FILE_STORAGE_DRIVER_S3)),
@@ -1437,7 +1437,7 @@ export default {
                             label: 'admin.support.termsTitle',
                             label_default: 'Terms of Service link:',
                             help_text: 'admin.support.termsDesc',
-                            help_text_default: 'Link to the terms under which users may use your online service. By default, this includes the "ZeroChat Conditions of Use (End Users)" explaining the terms under which ZeroChat software is provided to end users. If you change the default link to add your own terms for using the service you provide, your new terms must include a link to the default terms so end users are aware of the ZeroChat Conditions of Use (End User) for ZeroChat software.',
+                            help_text_default: 'Link to the terms under which users may use your online service. By default, this includes the "TF Chat Conditions of Use (End Users)" explaining the terms under which TF Chat software is provided to end users. If you change the default link to add your own terms for using the service you provide, your new terms must include a link to the default terms so end users are aware of the TF Chat Conditions of Use (End User) for TF Chat software.',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_TEXT,
@@ -1453,7 +1453,7 @@ export default {
                             label: 'admin.support.aboutTitle',
                             label_default: 'About link:',
                             help_text: 'admin.support.aboutDesc',
-                            help_text_default: 'The URL for the About link on the ZeroChat login and sign-up pages. If this field is empty, the About link is hidden from users.',
+                            help_text_default: 'The URL for the About link on the TF Chat login and sign-up pages. If this field is empty, the About link is hidden from users.',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_TEXT,
@@ -1461,7 +1461,7 @@ export default {
                             label: 'admin.support.helpTitle',
                             label_default: 'Help link:',
                             help_text: 'admin.support.helpDesc',
-                            help_text_default: 'The URL for the Help link on the ZeroChat login page, sign-up pages, and Main Menu. If this field is empty, the Help link is hidden from users.',
+                            help_text_default: 'The URL for the Help link on the TF Chat login page, sign-up pages, and Main Menu. If this field is empty, the Help link is hidden from users.',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_TEXT,
@@ -1486,15 +1486,15 @@ export default {
                 schema: {
                     id: 'LegalAndSupportSettings',
                     name: 'admin.customization.nativeAppLinks',
-                    name_default: 'ZeroChat App Links',
+                    name_default: 'TF Chat App Links',
                     settings: [
                         {
                             type: Constants.SettingsTypes.TYPE_TEXT,
                             key: 'NativeAppSettings.AppDownloadLink',
                             label: 'admin.customization.appDownloadLinkTitle',
-                            label_default: 'ZeroChat Apps Download Page Link:',
+                            label_default: 'TF Chat Apps Download Page Link:',
                             help_text: 'admin.customization.appDownloadLinkDesc',
-                            help_text_default: 'Add a link to a download page for the ZeroChat apps. When a link is present, an option to "Download ZeroChat Apps" will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu.',
+                            help_text_default: 'Add a link to a download page for the TF Chat apps. When a link is present, an option to "Download TF Chat Apps" will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu.',
                         },
                         {
                             type: Constants.SettingsTypes.TYPE_TEXT,
@@ -1655,7 +1655,7 @@ export default {
                             label: 'admin.metrics.enableTitle',
                             label_default: 'Enable Performance Monitoring:',
                             help_text: 'admin.metrics.enableDescription',
-                            help_text_default: 'When true, ZeroChat will enable performance monitoring collection and profiling. Please see <a href="/" target="_blank">documentation</a> to learn more about configuring performance monitoring for ZeroChat.',
+                            help_text_default: 'When true, TF Chat will enable performance monitoring collection and profiling. Please see <a href="/" target="_blank">documentation</a> to learn more about configuring performance monitoring for TF Chat.',
                             help_text_html: true,
                         },
                         {

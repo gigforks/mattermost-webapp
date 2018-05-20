@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -40,10 +40,10 @@ export default class SecurityTab extends React.Component {
          */
         canUseAccessTokens: PropTypes.bool,
 
-        // Whether or not this instance of ZeroChat is licensed.
+        // Whether or not this instance of TF Chat is licensed.
         isLicensed: PropTypes.bool,
 
-        // Whether or not this instance of ZeroChat is licensed to use multi-factor authentication.
+        // Whether or not this instance of TF Chat is licensed to use multi-factor authentication.
         mfaLicensed: PropTypes.bool,
 
         // Whether or not OAuth applications are enabled.

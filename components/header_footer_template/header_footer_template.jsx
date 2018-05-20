@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -14,7 +14,7 @@ export default class NotLoggedIn extends React.PureComponent {
         children: PropTypes.object,
 
         /*
-         * ZeroChat configuration
+         * TF Chat configuration
          */
         config: PropTypes.object,
     };
@@ -99,7 +99,7 @@ export default class NotLoggedIn extends React.PureComponent {
                 <div className='row footer'>
                     <div className='footer-pane col-xs-12'>
                         <div className='col-xs-12'>
-                            <span className='pull-right footer-site-name'>{'ZeroChat'}</span>
+                            <span className='pull-right footer-site-name'>{'TF Chat'}</span>
                         </div>
                         <div className='col-xs-12'>
                             <span className='pull-right footer-link copyright'>

@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -16,7 +16,7 @@ export default function GetIosApp({iosAppDownloadLink}) {
             <h1 className='get-app__header'>
                 <FormattedMessage
                     id='get_app.iosHeader'
-                    defaultMessage='ZeroChat works best if you switch to our iPhone app'
+                    defaultMessage='TF Chat works best if you switch to our iPhone app'
                 />
             </h1>
             <hr/>
@@ -38,12 +38,12 @@ export default function GetIosApp({iosAppDownloadLink}) {
                 />
             </h2>
             <a
-                className='btn btn-primary get-ios-app__open-zerochat'
-                href='zerochat://'
+                className='btn btn-primary get-ios-app__open-tfchat'
+                href='tfchat://'
             >
                 <FormattedMessage
-                    id='get_app.openZeroChat'
-                    defaultMessage='Open ZeroChat'
+                    id='get_app.openTF Chat'
+                    defaultMessage='Open TF Chat'
                 />
             </a>
             <span className='get-app__continue-with-browser'>

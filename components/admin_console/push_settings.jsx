@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -138,14 +138,14 @@ export default class PushSettings extends AdminSettings {
             pushServerHelpText = (
                 <FormattedHTMLMessage
                     id='admin.email.mhpnsHelp'
-                    defaultMessage='Download <a href="/" target="_blank">ZeroChat iOS app</a> from iTunes. Download <a href="/" target="_blank">ZeroChat Android app</a> from Google Play. Learn more about the <a href="/" target="_blank">ZeroChat Hosted Push Notification Service</a>.'
+                    defaultMessage='Download <a href="/" target="_blank">TF Chat iOS app</a> from iTunes. Download <a href="/" target="_blank">TF Chat Android app</a> from Google Play. Learn more about the <a href="/" target="_blank">TF Chat Hosted Push Notification Service</a>.'
                 />
             );
         } else if (this.state.pushNotificationServerType === PUSH_NOTIFICATIONS_MTPNS) {
             pushServerHelpText = (
                 <FormattedHTMLMessage
                     id='admin.email.mtpnsHelp'
-                    defaultMessage='Download <a href="/" target="_blank">ZeroChat iOS app</a> from iTunes. Download <a href="/" target="_blank">ZeroChat Android app</a> from Google Play. Learn more about the <a href="/" target="_blank">ZeroChat Test Push Notification Service</a>.'
+                    defaultMessage='Download <a href="/" target="_blank">TF Chat iOS app</a> from iTunes. Download <a href="/" target="_blank">TF Chat Android app</a> from Google Play. Learn more about the <a href="/" target="_blank">TF Chat Test Push Notification Service</a>.'
                 />
             );
         } else {
@@ -171,7 +171,7 @@ export default class PushSettings extends AdminSettings {
                         />
                         <FormattedHTMLMessage
                             id='admin.email.agreeHPNS'
-                            defaultMessage=' I understand and accept the ZeroChat Hosted Push Notification Service <a href="/" target="_blank">Terms of Service</a> and <a href="/" target="_blank">Privacy Policy</a>.'
+                            defaultMessage=' I understand and accept the TF Chat Hosted Push Notification Service <a href="/" target="_blank">Terms of Service</a> and <a href="/" target="_blank">Privacy Policy</a>.'
                         />
                     </div>
                 </div>
@@ -210,7 +210,7 @@ export default class PushSettings extends AdminSettings {
                             defaultMessage='Push Notification Server:'
                         />
                     }
-                    placeholder={Utils.localizeMessage('admin.email.pushServerEx', 'E.g.: "http://push-test.zerochat.com"')}
+                    placeholder={Utils.localizeMessage('admin.email.pushServerEx', 'E.g.: "http://push-test.tfchat.com"')}
                     helpText={pushServerHelpText}
                     value={this.state.pushNotificationServer}
                     onChange={this.handleChange}

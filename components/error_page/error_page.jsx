@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import crypto from 'crypto';
@@ -56,7 +56,7 @@ export default class ErrorPage extends React.PureComponent {
                 <Link to={returnTo}>
                     <FormattedMessage
                         id='error.generic.link'
-                        defaultMessage='Back to ZeroChat'
+                        defaultMessage='Back to TF Chat'
                     />
                 </Link>
             );

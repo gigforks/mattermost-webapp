@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -85,7 +85,7 @@ class TeamImportTab extends React.Component {
                 <p>
                     <FormattedMessage
                         id='team_import_tab.importHelpLine1'
-                        defaultMessage="Slack import to ZeroChat supports importing of messages in your Slack team's public channels."
+                        defaultMessage="Slack import to TF Chat supports importing of messages in your Slack team's public channels."
                     />
                 </p>
                 <p>

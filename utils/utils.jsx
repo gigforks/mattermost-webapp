@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2015-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import $ from 'jquery';
@@ -604,8 +604,8 @@ export function applyTheme(theme) {
         case 'Organization':
             dndIndicator = Constants.THEMES.organization.dndIndicator;
             break;
-        case 'ZeroChat Dark':
-            dndIndicator = Constants.THEMES.ZeroChatDark.dndIndicator;
+        case 'TF Chat Dark':
+            dndIndicator = Constants.THEMES.TF ChatDark.dndIndicator;
             break;
         case 'Windows Dark':
             dndIndicator = Constants.THEMES.windows10.dndIndicator;

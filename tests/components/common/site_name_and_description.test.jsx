@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -11,7 +11,7 @@ describe('/components/common/SiteNameAndDescription', () => {
     const baseProps = {
         customDescriptionText: '',
         isLicensed: false,
-        siteName: 'ZeroChat',
+        siteName: 'TF Chat',
     };
 
     test('should match snapshot, default', () => {

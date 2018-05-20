@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 import React from 'react';
 import {FormattedHTMLMessage, FormattedMessage} from 'react-intl';
@@ -158,7 +158,7 @@ export default class MessageExportSettings extends AdminSettings {
                             defaultMessage='Email Address:'
                         />
                     }
-                    placeholder={Utils.localizeMessage('admin.complianceExport.globalRelayEmailAddress.example', 'E.g.: "globalrelay@zerochat.com"')}
+                    placeholder={Utils.localizeMessage('admin.complianceExport.globalRelayEmailAddress.example', 'E.g.: "globalrelay@tfchat.com"')}
                     helpText={
                         <FormattedHTMLMessage
                             id='admin.complianceExport.globalRelayEmailAddress.description'
@@ -195,7 +195,7 @@ export default class MessageExportSettings extends AdminSettings {
                     <div className='banner__content'>
                         <FormattedHTMLMessage
                             id='admin.complianceExport.description'
-                            defaultMessage='This feature supports compliance exports to the Actiance XML and GlobalRelay EML formats, and is currently in beta. Support for the ZeroChat CSV format is scheduled for a future release, and will replace the existing <a href=\"/admin_console/general/compliance\">Compliance</a> feature.'
+                            defaultMessage='This feature supports compliance exports to the Actiance XML and GlobalRelay EML formats, and is currently in beta. Support for the TF Chat CSV format is scheduled for a future release, and will replace the existing <a href=\"/admin_console/general/compliance\">Compliance</a> feature.'
                         />
                     </div>
                 </div>
@@ -211,7 +211,7 @@ export default class MessageExportSettings extends AdminSettings {
                     helpText={
                         <FormattedHTMLMessage
                             id='admin.service.complianceExportDesc'
-                            defaultMessage='When true, ZeroChat will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See <a href=\"\\" target=\"_blank\">the documentation</a> to learn more.'
+                            defaultMessage='When true, TF Chat will export all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See <a href=\"\\" target=\"_blank\">the documentation</a> to learn more.'
                         />
                     }
                     value={this.state.enableComplianceExport}

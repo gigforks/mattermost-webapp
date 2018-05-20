@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -108,7 +108,7 @@ export default class ManageLanguage extends React.Component {
                     <br/>
                     <FormattedHTMLMessage
                         id='user.settings.languages.promote'
-                        defaultMessage='Select which language ZeroChat displays in the user interface.<br /><br />Would like to help with translations? Join the <a href="/" target="_blank"> ZeroChat Translation Server</a> to contribute.'
+                        defaultMessage='Select which language TF Chat displays in the user interface.<br /><br />Would like to help with translations? Join the <a href="/" target="_blank"> TF Chat Translation Server</a> to contribute.'
                     />
                 </div>
             </div>

@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import $ from 'jquery';
@@ -212,7 +212,7 @@ export default class AdminNavbarDropdown extends React.Component {
                             >
                                 <FormattedMessage
                                     id='navbar_dropdown.about'
-                                    defaultMessage='About ZeroChat'
+                                    defaultMessage='About TF Chat'
                                 />
                             </a>
                         </li>

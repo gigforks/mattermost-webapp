@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -296,7 +296,7 @@ export class WebhookSettings extends AdminSettings {
                     helpText={
                         <FormattedHTMLMessage
                             id='admin.oauth.providerDescription'
-                            defaultMessage='When true, ZeroChat can act as an OAuth 2.0 service provider allowing ZeroChat to authorize API requests from external applications. See <a href="/" target="_blank">documentation</a> to learn more.'
+                            defaultMessage='When true, TF Chat can act as an OAuth 2.0 service provider allowing TF Chat to authorize API requests from external applications. See <a href="/" target="_blank">documentation</a> to learn more.'
                         />
                     }
                     value={this.state.enableOAuthServiceProvider}

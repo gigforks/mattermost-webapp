@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -103,7 +103,7 @@ export default class ClusterSettings extends AdminSettings {
                     <i className='fa fa-warning'/>
                     <FormattedHTMLMessage
                         id='admin.cluster.should_not_change'
-                        defaultMessage='WARNING: These settings may not sync with the other servers in the cluster. High Availability inter-node communication will not start until you modify the config.json to be identical on all servers and restart ZeroChat. Please see the <a href="/" target="_blank">documentation</a> on how to add or remove a server from the cluster. If you are accessing the System Console through a load balancer and experiencing issues, please see the Troubleshooting Guide in our <a href="/" target="_blank">documentation</a>.'
+                        defaultMessage='WARNING: These settings may not sync with the other servers in the cluster. High Availability inter-node communication will not start until you modify the config.json to be identical on all servers and restart TF Chat. Please see the <a href="/" target="_blank">documentation</a> on how to add or remove a server from the cluster. If you are accessing the System Console through a load balancer and experiencing issues, please see the Troubleshooting Guide in our <a href="/" target="_blank">documentation</a>.'
                     />
                 </div>
             );
@@ -136,7 +136,7 @@ export default class ClusterSettings extends AdminSettings {
                     helpText={
                         <FormattedHTMLMessage
                             id='admin.cluster.enableDescription'
-                            defaultMessage='When true, ZeroChat will run in High Availability mode. Please see <a href="/" target="_blank">documentation</a> to learn more about configuring High Availability for ZeroChat.'
+                            defaultMessage='When true, TF Chat will run in High Availability mode. Please see <a href="/" target="_blank">documentation</a> to learn more about configuring High Availability for TF Chat.'
                         />
                     }
                     value={this.state.Enable}

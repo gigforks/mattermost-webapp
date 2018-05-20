@@ -1,4 +1,4 @@
-// Copyright (c) 2018-present ZeroChat, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -273,7 +273,7 @@ export default class AnnouncementBar extends React.PureComponent {
             message = (
                 <FormattedHTMLMessage
                     id={ErrorBarTypes.WEBSOCKET_PORT_ERROR}
-                    defaultMessage='Please check connection, ZeroChat unreachable. If issue persists, ask administrator to <a href="/" target="_blank">check WebSocket port</a>.'
+                    defaultMessage='Please check connection, TF Chat unreachable. If issue persists, ask administrator to <a href="/" target="_blank">check WebSocket port</a>.'
                 />
             );
         } else if (message === ErrorBarTypes.SITE_URL) {
@@ -281,7 +281,7 @@ export default class AnnouncementBar extends React.PureComponent {
             let defaultMessage;
             if (this.props.enableSignUpWithGitLab) {
                 id = 'error_bar.site_url_gitlab';
-                defaultMessage = 'Please configure your {docsLink} in the System Console or in gitlab.rb if you\'re using GitLab ZeroChat.';
+                defaultMessage = 'Please configure your {docsLink} in the System Console or in gitlab.rb if you\'re using GitLab TF Chat.';
             } else {
                 id = 'error_bar.site_url';
                 defaultMessage = 'Please configure your {docsLink} in the System Console.';
