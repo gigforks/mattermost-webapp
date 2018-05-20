@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -101,7 +101,7 @@ export default class DesktopNotificationSettings extends React.Component {
                         <span>
                             <FormattedMessage
                                 id='user.settings.notifications.sounds_info'
-                                defaultMessage='Notification sounds are available on IE11, Safari, Chrome and Mattermost Desktop Apps.'
+                                defaultMessage='Notification sounds are available on IE11, Safari, Chrome and TF Chat Desktop Apps.'
                             />
                         </span>
                     </div>
@@ -232,7 +232,7 @@ export default class DesktopNotificationSettings extends React.Component {
                 <span>
                     <FormattedMessage
                         id='user.settings.notifications.desktop.durationInfo'
-                        defaultMessage='Sets how long desktop notifications will remain on screen when using Firefox or Chrome. Desktop notifications in Edge, Safari and Mattermost Desktop Apps can only stay on screen for a maximum of 5 seconds.'
+                        defaultMessage='Sets how long desktop notifications will remain on screen when using Firefox or Chrome. Desktop notifications in Edge, Safari and TF Chat Desktop Apps can only stay on screen for a maximum of 5 seconds.'
                     />
                 </span>
             );
@@ -304,7 +304,7 @@ export default class DesktopNotificationSettings extends React.Component {
                 <span>
                     <FormattedMessage
                         id='user.settings.notifications.info'
-                        defaultMessage='Desktop notifications are available on Edge, Firefox, Safari, Chrome and Mattermost Desktop Apps.'
+                        defaultMessage='Desktop notifications are available on Edge, Firefox, Safari, Chrome and TF Chat Desktop Apps.'
                     />
                 </span>
                 {soundSection}

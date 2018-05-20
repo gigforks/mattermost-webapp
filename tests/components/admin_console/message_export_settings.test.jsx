@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -81,7 +81,7 @@ describe('components/MessageExportSettings', () => {
                     CustomerType: 'A10',
                     SmtpUsername: 'globalRelayUser',
                     SmtpPassword: 'globalRelayPassword',
-                    EmailAddress: 'globalRelay@mattermost.com',
+                    EmailAddress: 'globalRelay@tfchat.com',
                 },
             },
         };
@@ -110,7 +110,7 @@ describe('components/MessageExportSettings', () => {
         expect(wrapper.find('#globalRelayCustomerType').prop('value')).toBe('A10');
         expect(wrapper.find('#globalRelaySmtpUsername').prop('value')).toBe('globalRelayUser');
         expect(wrapper.find('#globalRelaySmtpPassword').prop('value')).toBe('globalRelayPassword');
-        expect(wrapper.find('#globalRelayEmailAddress').prop('value')).toBe('globalRelay@mattermost.com');
+        expect(wrapper.find('#globalRelayEmailAddress').prop('value')).toBe('globalRelay@tfchat.com');
     });
 
     test('should match snapshot, enabled, globalrelay', () => {
@@ -125,7 +125,7 @@ describe('components/MessageExportSettings', () => {
                     CustomerType: 'A10',
                     SmtpUsername: 'globalRelayUser',
                     SmtpPassword: 'globalRelayPassword',
-                    EmailAddress: 'globalRelay@mattermost.com',
+                    EmailAddress: 'globalRelay@tfchat.com',
                 },
             },
         };
@@ -154,6 +154,6 @@ describe('components/MessageExportSettings', () => {
         expect(wrapper.find('#globalRelayCustomerType').prop('value')).toBe('A10');
         expect(wrapper.find('#globalRelaySmtpUsername').prop('value')).toBe('globalRelayUser');
         expect(wrapper.find('#globalRelaySmtpPassword').prop('value')).toBe('globalRelayPassword');
-        expect(wrapper.find('#globalRelayEmailAddress').prop('value')).toBe('globalRelay@mattermost.com');
+        expect(wrapper.find('#globalRelayEmailAddress').prop('value')).toBe('globalRelay@tfchat.com');
     });
 });

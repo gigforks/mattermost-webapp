@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -15,7 +15,7 @@ import {displayExpiryDate, isLicenseExpired, isLicenseExpiring, isLicensePastGra
 import * as TextFormatting from 'utils/text_formatting.jsx';
 import * as Utils from 'utils/utils.jsx';
 
-const RENEWAL_LINK = 'https://licensing.mattermost.com/renew';
+const RENEWAL_LINK = '/';
 
 const BAR_DEVELOPER_TYPE = 'developer';
 const BAR_CRITICAL_TYPE = 'critical';
@@ -274,7 +274,7 @@ export default class AnnouncementBar extends React.PureComponent {
             message = (
                 <FormattedHTMLMessage
                     id={ErrorBarTypes.WEBSOCKET_PORT_ERROR}
-                    defaultMessage='Please check connection, Mattermost unreachable. If issue persists, ask administrator to <a href="https://about.mattermost.com/default-websocket-port-help" target="_blank">check WebSocket port</a>.'
+                    defaultMessage='Please check connection, TF Chat unreachable. If issue persists, ask administrator to <a href="/" target="_blank">check WebSocket port</a>.'
                 />
             );
         } else if (message === ErrorBarTypes.SITE_URL) {
@@ -295,7 +295,7 @@ export default class AnnouncementBar extends React.PureComponent {
                     values={{
                         docsLink: (
                             <a
-                                href='https://docs.mattermost.com/administration/config-settings.html#site-url'
+                                href='/'
                                 rel='noopener noreferrer'
                                 target='_blank'
                             >

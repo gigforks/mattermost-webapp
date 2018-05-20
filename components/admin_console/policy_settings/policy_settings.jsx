@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -361,7 +361,7 @@ export class PolicySettings extends AdminSettings {
                             values={{
                                 commandLineToolLink: (
                                     <a
-                                        href='https://docs.mattermost.com/administration/command-line-tools.html'
+                                        href='/'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                     >
@@ -470,7 +470,7 @@ export class PolicySettings extends AdminSettings {
                             values={{
                                 commandLineToolLink: (
                                     <a
-                                        href='https://docs.mattermost.com/administration/command-line-tools.html'
+                                        href='/'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                     >

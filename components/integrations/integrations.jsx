@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -146,7 +146,7 @@ export default class Integrations extends React.Component {
                         description={
                             <FormattedMessage
                                 id='integrations.oauthApps.description'
-                                defaultMessage='Auth 2.0 allows external applications to make authorized requests to the Mattermost API.'
+                                defaultMessage='Auth 2.0 allows external applications to make authorized requests to the TF Chat API.'
                             />
                         }
                         link={'/' + this.props.team.name + '/integrations/oauth2-apps'}
@@ -168,13 +168,13 @@ export default class Integrations extends React.Component {
                 <div className='backstage-list__help'>
                     <FormattedMessage
                         id='integrations.help'
-                        defaultMessage='Visit the {appDirectory} to find self-hosted, third-party apps and integrations for Mattermost.'
+                        defaultMessage='Visit the {appDirectory} to find self-hosted, third-party apps and integrations for TF Chat.'
                         values={{
                             appDirectory: (
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://about.mattermost.com/default-app-directory/'
+                                    href='/'
                                 >
                                     <FormattedMessage
                                         id='integrations.help.appDirectory'

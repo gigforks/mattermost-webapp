@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -571,7 +571,7 @@ export default class SidebarRightMenu extends React.Component {
                                 <i className='icon fa fa-info'/>
                                 <FormattedMessage
                                     id='navbar_dropdown.about'
-                                    defaultMessage='About Mattermost'
+                                    defaultMessage='About TF Chat'
                                 />
                             </a>
                         </li>

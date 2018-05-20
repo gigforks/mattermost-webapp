@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import $ from 'jquery';
@@ -627,7 +627,7 @@ export default class SidebarHeaderDropdown extends React.Component {
                 >
                     <FormattedMessage
                         id='navbar_dropdown.about'
-                        defaultMessage='About Mattermost'
+                        defaultMessage='About TF Chat'
                     />
                 </button>
             </li>

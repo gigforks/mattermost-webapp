@@ -1,10 +1,10 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
 import {FormattedHTMLMessage} from 'react-intl';
 
-import mattermostIcon from 'images/icon50x50.png';
+import threefoldIcon from 'images/icon50x50.png';
 
 // Notices are objects with the following fields:
 //  - name - string identifier
@@ -21,14 +21,14 @@ export default [
         title: (
             <FormattedHTMLMessage
                 id='system_notice.title'
-                defaultMessage='<strong>System Message</strong> from Mattermost'
+                defaultMessage='<strong>System Message</strong> from TF Chat'
             />
         ),
-        icon: mattermostIcon,
+        icon: threefoldIcon,
         body: (
             <FormattedHTMLMessage
                 id='system_notice.body.api3'
-                defaultMessage='If you’ve created or installed integrations in the last two years, find out how <a href="https://about.mattermost.com/default-apiv3-deprecation-guide" target="_blank">upcoming changes</a> may affect them.'
+                defaultMessage='If you’ve created or installed integrations in the last two years, find out how <a href="/" target="_blank">upcoming changes</a> may affect them.'
             />
         ),
     },

@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -445,7 +445,7 @@ export default class AbstractOutgoingWebhook extends React.Component {
                                         values={{
                                             link: (
                                                 <a
-                                                    href='https://about.mattermost.com/default-allow-internal-connections-settings-documentation/'
+                                                    href='/'
                                                     target='_blank'
                                                     rel='noopener noreferrer'
                                                 >

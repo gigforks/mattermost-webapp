@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -138,7 +138,7 @@ export default class CustomBrandSettings extends AdminSettings {
                         />
                     }
                     maxLength={Constants.MAX_SITENAME_LENGTH}
-                    placeholder={Utils.localizeMessage('admin.team.siteNameExample', 'E.g.: "Mattermost"')}
+                    placeholder={Utils.localizeMessage('admin.team.siteNameExample', 'E.g.: "TF Chat"')}
                     helpText={
                         <FormattedMessage
                             id='admin.team.siteNameDescription'

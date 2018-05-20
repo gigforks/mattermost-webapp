@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -166,7 +166,7 @@ export default class TeamAnalytics extends React.Component {
                     <div className='banner__content'>
                         <FormattedHTMLMessage
                             id='analytics.system.infoAndSkippedIntensiveQueries'
-                            defaultMessage="Only data for the chosen team is calculated. Excludes posts made in direct message channels, which are not tied to a team. <br><br> Some statistics have been omitted because they put too much load on the system to calculate. See <a href='https://docs.mattermost.com/administration/statistics.html' target='_blank'>https://docs.mattermost.com/administration/statistics.html</a> for more details."
+                            defaultMessage="Only data for the chosen team is calculated. Excludes posts made in direct message channels, which are not tied to a team. <br><br> Some statistics have been omitted because they put too much load on the system to calculate. See <a href='/' target='_blank'> for more details."
                         />
                     </div>
                 </div>

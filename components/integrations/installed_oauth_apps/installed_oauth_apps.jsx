@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -130,13 +130,13 @@ export default class InstalledOAuthApps extends React.PureComponent {
                 helpText={
                     <FormattedMessage
                         id='installed_oauth_apps.help'
-                        defaultMessage='Create {oauthApplications} to securely integrate bots and third-party apps with Mattermost. Visit the {appDirectory} to find available self-hosted apps.'
+                        defaultMessage='Create {oauthApplications} to securely integrate bots and third-party apps with TF Chat. Visit the {appDirectory} to find available self-hosted apps.'
                         values={{
                             oauthApplications: (
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://docs.mattermost.com/developer/oauth-2-0-applications.html'
+                                    href='/'
                                 >
                                     <FormattedMessage
                                         id='installed_oauth_apps.help.oauthApplications'
@@ -148,7 +148,7 @@ export default class InstalledOAuthApps extends React.PureComponent {
                                 <a
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href='https://about.mattermost.com/default-app-directory/'
+                                    href='/'
                                 >
                                     <FormattedMessage
                                         id='installed_oauth_apps.help.appDirectory'

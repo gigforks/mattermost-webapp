@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -281,7 +281,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.publicCertificateFileRemoveDesc'
-                            defaultMessage='Remove the certificate used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.'
+                            defaultMessage='Remove the certificate used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when TF Chat is the Service Provider.'
                         />
                     }
                     removeButtonText={Utils.localizeMessage('admin.saml.remove.sp_certificate', 'Remove Service Provider Certificate')}
@@ -305,7 +305,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.publicCertificateFileDesc'
-                            defaultMessage='The certificate used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.'
+                            defaultMessage='The certificate used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when TF Chat is the Service Provider.'
                         />
                     }
                     uploadingText={Utils.localizeMessage('admin.saml.uploading.certificate', 'Uploading Certificate...')}
@@ -330,7 +330,7 @@ export default class SamlSettings extends AdminSettings {
             consumerServiceUrlHelp = (
                 <FormattedMessage
                     id='admin.saml.assertionConsumerServiceURLDesc'
-                    defaultMessage='Enter https://<your-mattermost-url>/login/sso/saml. Make sure you use HTTP or HTTPS in your URL depending on your server configuration. This field is also known as the Assertion Consumer Service URL.'
+                    defaultMessage='Enter https://<your-tfchat-url>/login/sso/saml. Make sure you use HTTP or HTTPS in your URL depending on your server configuration. This field is also known as the Assertion Consumer Service URL.'
                 />
             );
         }
@@ -348,7 +348,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedHTMLMessage
                             id='admin.saml.enableDescription'
-                            defaultMessage='When true, Mattermost allows login using SAML 2.0. Please see <a href="http://docs.mattermost.com/deployment/sso-saml.html" target="_blank">documentation</a> to learn more about configuring SAML for Mattermost.'
+                            defaultMessage='When true, TF Chat allows login using SAML 2.0. Please see <a href="/" target="_blank">documentation</a> to learn more about configuring SAML for TF Chat.'
                         />
                     }
                     value={this.state.enable}
@@ -366,7 +366,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedHTMLMessage
                             id='admin.saml.enableSyncWithLdapDescription'
-                            defaultMessage='When true, Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, from AD/LDAP. Enable and configure synchronization settings at <strong>Authentication > AD/LDAP</strong>. When false, user attributes are updated from SAML during user login. See <a href="https://about.mattermost.com/default-saml-ldap-sync" target="_blank">documentation</a> to learn more.'
+                            defaultMessage='When true, TF Chat periodically synchronizes SAML user attributes, including user deactivation and removal, from AD/LDAP. Enable and configure synchronization settings at <strong>Authentication > AD/LDAP</strong>. When false, user attributes are updated from SAML during user login. See <a href="/" target="_blank">documentation</a> to learn more.'
                         />
                     }
                     value={this.state.enableSyncWithLdap}
@@ -386,7 +386,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.idpUrlDesc'
-                            defaultMessage='The URL where Mattermost sends a SAML request to start login sequence.'
+                            defaultMessage='The URL where TF Chat sends a SAML request to start login sequence.'
                         />
                     }
                     value={this.state.idpUrl}
@@ -426,7 +426,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.verifyDescription'
-                            defaultMessage='When false, Mattermost will not verify that the signature sent from a SAML Response matches the Service Provider Login URL. Not recommended for production environments. For testing only.'
+                            defaultMessage='When false, TF Chat will not verify that the signature sent from a SAML Response matches the Service Provider Login URL. Not recommended for production environments. For testing only.'
                         />
                     }
                     value={this.state.verify}
@@ -442,7 +442,7 @@ export default class SamlSettings extends AdminSettings {
                             defaultMessage='Service Provider Login URL:'
                         />
                     }
-                    placeholder={Utils.localizeMessage('admin.saml.assertionConsumerServiceURLEx', 'E.g.: "https://<your-mattermost-url>/login/sso/saml"')}
+                    placeholder={Utils.localizeMessage('admin.saml.assertionConsumerServiceURLEx', 'E.g.: "https://<your-tfchat-url>/login/sso/saml"')}
                     helpText={consumerServiceUrlHelp}
                     value={this.state.assertionConsumerServiceURL}
                     onChange={this.handleChange}
@@ -460,7 +460,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.encryptDescription'
-                            defaultMessage='When false, Mattermost will not decrypt SAML Assertions encrypted with your Service Provider Public Certificate. Not recommended for production environments. For testing only.'
+                            defaultMessage='When false, TF Chat will not decrypt SAML Assertions encrypted with your Service Provider Public Certificate. Not recommended for production environments. For testing only.'
                         />
                     }
                     value={this.state.encrypt}
@@ -482,7 +482,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.emailAttrDesc'
-                            defaultMessage='The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.'
+                            defaultMessage='The attribute in the SAML Assertion that will be used to populate the email addresses of users in TF Chat.'
                         />
                     }
                     value={this.state.emailAttribute}
@@ -502,7 +502,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.usernameAttrDesc'
-                            defaultMessage='The attribute in the SAML Assertion that will be used to populate the username field in Mattermost.'
+                            defaultMessage='The attribute in the SAML Assertion that will be used to populate the username field in TF Chat.'
                         />
                     }
                     value={this.state.usernameAttribute}
@@ -522,7 +522,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.firstnameAttrDesc'
-                            defaultMessage='(Optional) The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.'
+                            defaultMessage='(Optional) The attribute in the SAML Assertion that will be used to populate the first name of users in TF Chat.'
                         />
                     }
                     value={this.state.firstNameAttribute}
@@ -542,7 +542,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.lastnameAttrDesc'
-                            defaultMessage='(Optional) The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.'
+                            defaultMessage='(Optional) The attribute in the SAML Assertion that will be used to populate the last name of users in TF Chat.'
                         />
                     }
                     value={this.state.lastNameAttribute}
@@ -562,7 +562,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.nicknameAttrDesc'
-                            defaultMessage='(Optional) The attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.'
+                            defaultMessage='(Optional) The attribute in the SAML Assertion that will be used to populate the nickname of users in TF Chat.'
                         />
                     }
                     value={this.state.nicknameAttribute}
@@ -582,7 +582,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.positionAttrDesc'
-                            defaultMessage='(Optional) The attribute in the SAML Assertion that will be used to populate the position of users in Mattermost.'
+                            defaultMessage='(Optional) The attribute in the SAML Assertion that will be used to populate the position of users in TF Chat.'
                         />
                     }
                     value={this.state.positionAttribute}
@@ -602,7 +602,7 @@ export default class SamlSettings extends AdminSettings {
                     helpText={
                         <FormattedMessage
                             id='admin.saml.localeAttrDesc'
-                            defaultMessage='(Optional) The attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.'
+                            defaultMessage='(Optional) The attribute in the SAML Assertion that will be used to populate the language of users in TF Chat.'
                         />
                     }
                     value={this.state.localeAttribute}

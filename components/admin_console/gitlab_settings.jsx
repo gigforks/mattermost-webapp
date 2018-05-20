@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -90,12 +90,12 @@ export default class GitLabSettings extends AdminSettings {
                         <div>
                             <FormattedMessage
                                 id='admin.gitlab.enableDescription'
-                                defaultMessage='When true, Mattermost allows team creation and account signup using GitLab OAuth.'
+                                defaultMessage='When true, TF Chat allows team creation and account signup using GitLab OAuth.'
                             />
                             <br/>
                             <FormattedHTMLMessage
                                 id='admin.gitlab.EnableHtmlDesc'
-                                defaultMessage='<ol><li>Log in to your GitLab account and go to Profile Settings -> Applications.</li><li>Enter Redirect URIs "<your-mattermost-url>/login/gitlab/complete" (example: http://localhost:8065/login/gitlab/complete) and "<your-mattermost-url>/signup/gitlab/complete". </li><li>Then use "Application Secret Key" and "Application ID" fields from GitLab to complete the options below.</li><li>Complete the Endpoint URLs below. </li></ol>'
+                                defaultMessage='<ol><li>Log in to your GitLab account and go to Profile Settings -> Applications.</li><li>Enter Redirect URIs "<your-zeroChat-url>/login/gitlab/complete" (example: http://localhost:8065/login/gitlab/complete) and "<your-zeroChat-url>/signup/gitlab/complete". </li><li>Then use "Application Secret Key" and "Application ID" fields from GitLab to complete the options below.</li><li>Complete the Endpoint URLs below. </li></ol>'
                             />
                         </div>
                     }

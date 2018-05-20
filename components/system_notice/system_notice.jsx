@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 
 import {Preferences} from 'utils/constants.jsx';
-import MattermostLogo from 'components/svg/mattermost_logo';
+import ThreeFoldLogo from 'components/svg/threefold_logo';
 
 export default class SystemNotice extends React.PureComponent {
     static propTypes = {
@@ -99,7 +99,7 @@ export default class SystemNotice extends React.PureComponent {
             >
                 <div className='system-notice__header'>
                     <div className='system-notice__logo'>
-                        <MattermostLogo/>
+                        <ThreeFoldLogo/>
                     </div>
                     <div className='system-notice__title'>
                         {notice.title}

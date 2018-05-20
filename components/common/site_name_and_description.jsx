@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -14,7 +14,7 @@ export default class SiteNameAndDescription extends React.PureComponent {
 
     static defaultProps = {
         isLicensed: false,
-        siteName: 'Mattermost',
+        siteName: 'TF Chat',
     };
 
     render() {
@@ -38,6 +38,7 @@ export default class SiteNameAndDescription extends React.PureComponent {
         return (
             <React.Fragment>
                 <h1>{siteName}</h1>
+                <span>TF Chat</span>
                 <h4 className='color--light'>
                     {description}
                 </h4>

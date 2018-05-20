@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import {Constants} from '../../utils';
@@ -11,7 +11,7 @@ module.exports = {
 
         loginPage.navigate().
             navigateToPage().
-            assert.title('Mattermost').
+            assert.title('TF Chat').
             assert.visible('@loginInput').
             assert.visible('@passwordInput').
             assert.visible('@signinButton');

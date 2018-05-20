@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -19,7 +19,7 @@ jest.mock('pdfjs-dist', () => ({
 describe('component/PDFPreview', () => {
     const requiredProps = {
         fileInfo: {extension: 'pdf'},
-        fileUrl: 'https://pre-release.mattermost.com/api/v4/files/ips59w4w9jnfbrs3o94m1dbdie',
+        fileUrl: '/',
     };
 
     test('should match snapshot, loading', () => {

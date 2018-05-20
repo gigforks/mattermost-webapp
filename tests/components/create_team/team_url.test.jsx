@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 import React from 'react';
 import {shallow} from 'enzyme';
@@ -110,7 +110,7 @@ describe('/components/create_team/components/display_name', () => {
         expect(wrapper.state('nameError')).toEqual(
             <FormattedHTMLMessage
                 id='create_team.team_url.taken'
-                defaultMessage='This URL <a href="https://docs.mattermost.com/help/getting-started/creating-teams.html#team-url" target="_blank">starts with a reserved word</a> or is unavailable. Please try another.'
+                defaultMessage='This URL <a href="/" target="_blank">starts with a reserved word</a> or is unavailable. Please try another.'
             />
         );
     });

@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -428,7 +428,7 @@ export default class AbstractCommand extends React.PureComponent {
                                         values={{
                                             link: (
                                                 <a
-                                                    href='https://docs.mattermost.com/help/messaging/executing-commands.html#built-in-commands'
+                                                    href='/'
                                                     target='_blank'
                                                     rel='noopener noreferrer'
                                                 >

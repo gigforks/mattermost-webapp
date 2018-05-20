@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import React from 'react';
@@ -79,7 +79,7 @@ export default class SystemAnalytics extends React.Component {
                     <div className='banner__content'>
                         <FormattedHTMLMessage
                             id='analytics.system.skippedIntensiveQueries'
-                            defaultMessage="To maximize performance, some statistics are disabled. You can <a href='https://docs.mattermost.com/administration/statistics.html' target='_blank'>re-enable them in config.json</a>."
+                            defaultMessage="To maximize performance, some statistics are disabled. You can <a href='/' target='_blank'>re-enable them in config.json</a>."
                         />
                     </div>
                 </div>

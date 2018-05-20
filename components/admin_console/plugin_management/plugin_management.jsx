@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import PropTypes from 'prop-types';
@@ -402,14 +402,14 @@ export default class PluginManagement extends React.Component {
             uploadHelpText = (
                 <FormattedHTMLMessage
                     id='admin.plugin.uploadDesc'
-                    defaultMessage='Upload a plugin for your Mattermost server. See <a href="https://about.mattermost.com/default-plugin-uploads" target="_blank">documentation</a> to learn more.'
+                    defaultMessage='Upload a plugin for your TF Chat server. See <a href="\" target="_blank">documentation</a> to learn more.'
                 />
             );
         } else {
             uploadHelpText = (
                 <FormattedHTMLMessage
                     id='admin.plugin.uploadDisabledDesc'
-                    defaultMessage='To enable plugin uploads, go to <strong>Plugins > Configuration</strong>. See <a href="https://about.mattermost.com/default-plugin-uploads" target="_blank">documentation</a> to learn more.'
+                    defaultMessage='To enable plugin uploads, go to <strong>Plugins > Configuration</strong>. See <a href="\" target="_blank">documentation</a> to learn more.'
                 />
             );
         }
@@ -485,7 +485,7 @@ export default class PluginManagement extends React.Component {
                             <p className='help-text'>
                                 <FormattedHTMLMessage
                                     id='admin.plugin.installedDesc'
-                                    defaultMessage='Installed plugins on your Mattermost server. Pre-packaged plugins are installed by default, and can be deactivated but not removed.'
+                                    defaultMessage='Installed plugins on your TF Chat server. Pre-packaged plugins are installed by default, and can be deactivated but not removed.'
                                 />
                             </p>
                             <br/>

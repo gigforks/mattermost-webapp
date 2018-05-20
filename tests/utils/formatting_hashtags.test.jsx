@@ -1,4 +1,4 @@
-// Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
+// Copyright (c) 2018-present TF Chat, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
 import assert from 'assert';
@@ -184,8 +184,8 @@ describe('TextFormatting.Hashtags', function() {
         );
 
         assert.equal(
-            TextFormatting.formatText('#:mattermost:').trim(),
-            '<p>#<span data-emoticon="mattermost">:mattermost:</span></p>'
+            TextFormatting.formatText('#:tfchat:').trim(),
+            '<p>#<span data-emoticon="tfchat">:tfchat:</span></p>'
         );
 
         assert.equal(
